@@ -1,0 +1,43 @@
+@mixin commonFlex($justify, $direction, $wrap) {
+    display: flex;
+    justify-content: $justify;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+ }
+
+
+@mixin tablet {
+    @media (min-width: $tablet-width)
+    {@content;}
+    
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-width)
+    {@content;}
+    
+}
+
+@mixin vidTitles {
+    @media (min-width: 350px)
+    {@content;}
+    
+}
+
+@mixin avenirReg {
+    font-family: 'Avenir';
+    font-weight: 400;
+    font-style: normal;
+ }
+
+ @mixin avenirDemi {
+    font-family: 'Avenir';
+    font-weight: 500;
+    font-style: normal;
+ }
+
+ @mixin avenirBold {
+    font-family: 'Avenir';
+    font-weight: 700;
+    font-style: normal;
+ }
