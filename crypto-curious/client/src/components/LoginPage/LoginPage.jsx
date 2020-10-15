@@ -7,14 +7,14 @@ function LoginPage(props) {
     return (
         <main>
             <section className="login">
-                <form className="login__form">
-                    <label className="login__form-label"> User </label>
-                    <input className="login__form-input" value={email} type="text" required onChange={(e) =>setEmail(e.target.value)}></input>
-                    <p className="login__form-error">{emailError}</p>
+                <div className="login__section">
+                    <label className="login__section-label"> User </label>
+                    <input className="login__section-input" value={email} type="text" required onChange={(e) =>setEmail(e.target.value)}></input>
+                    <p className="login__section-error">{emailError}</p>
 
-                    <label className="login__form-label"> Password </label>
-                    <input className="login__form-input" value={password} type="password" required onChange={(e) =>setPassword(e.target.value)}></input>
-                    <p className="login__form-error">{passwordError}</p>
+                    <label className="login__section-label"> Password </label>
+                    <input className="login__section-input" value={password} type="password" required onChange={(e) =>setPassword(e.target.value)}></input>
+                    <p className="login__section-error">{passwordError}</p>
 
                     <div> 
                         {hasAccount ? 
@@ -35,7 +35,7 @@ function LoginPage(props) {
                     ) 
                     }
                     </div>
-                </form>
+                </div>
 
             </section>
             

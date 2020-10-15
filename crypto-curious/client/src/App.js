@@ -8,7 +8,7 @@ const App = () => {
   let [user, setUser] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
-  let [emailError, setEmailError] = useState("");
+  let [emailError, setEmailError] = useState("Please enter your email");
   let [hasAccount, setHasAccount] = useState(false);
   let [passwordError, setPasswordError] = useState("");
 
@@ -63,23 +63,27 @@ const App = () => {
  }
 
  let logoutHandler = () => {
-   fire.auth().signout();
+   fire.auth().signOut();
  }
 
 let userExistsListener = () => {
-  fire.auth().onAuthStateChanged(user => {
-    if(user) {
-      clearInputs();
-      setUser(user)}
-    else {
-      setUser('')
+  fire
+  .auth()
+  .onAuthStateChanged((user => {
+      if(user) {
+        clearInputs();
+        setUser(user)}
+      else {
+        setUser('')
+        }
       }
-    }
+    )
   )
 }
 
   useEffect(() => {
-    userExistsListener();},[],
+    userExistsListener();
+    },[],
   )
 
 
