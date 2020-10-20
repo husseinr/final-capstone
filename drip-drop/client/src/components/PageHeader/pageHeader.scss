@@ -1,0 +1,16 @@
+@import '../../styles/partials/common-styles';
+
+.nav {
+    @include commonFlex(space-around, row, wrap);
+    background-color: $greenish-color;
+    height: 80px;
+    align-items: center;
+
+    &__header {
+        margin: 0;
+
+        &-logo {
+            margin: 0;
+        }
+    }
+}
