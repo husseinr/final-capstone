@@ -1,0 +1,49 @@
+[
+    {
+        "id": "001",
+        "name": "Drip Coffee",
+        "image":"/assets/images/coffee-mug.svg"
+    },
+
+    {
+        "id": "002",
+        "name": "Americano",
+        "image":"/assets/images/coffee-mug.svg"
+    },
+
+    {
+        "id": "003",
+        "name": "Espresso",
+        "image":"/assets/images/coffee-mug.svg"
+    },
+
+    {
+        "id": "004",
+        "name": "Latte",
+        "image":"/assets/images/coffee-mug.svg"
+    },
+
+    {
+        "id": "005",
+        "name": "Cappucino",
+        "image":"/assets/images/coffee-mug.svg"
+    },
+
+    {
+        "id": "006",
+        "name": "Decaf",
+        "image":"/assets/images/coffee-mug.svg"
+    },
+
+    {
+        "id": "007",
+        "name": "Cold Brew",
+        "image":"/assets/images/coffee-mug.svg"
+    },
+
+    {
+        "id": "008",
+        "name": "Mocha",
+        "image":"/assets/images/coffee-mug.svg"
+    }
+]

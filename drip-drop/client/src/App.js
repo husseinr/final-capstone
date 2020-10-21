@@ -91,6 +91,7 @@ let userExistsListener = () => {
 
 
     return (
+      <BrowserRouter>
       <div className="App">
         {user ? (
           <MainPage 
@@ -109,6 +110,7 @@ let userExistsListener = () => {
             passwordError = {passwordError}/>
         )}
       </div>
+      </BrowserRouter>
     );
 
 }

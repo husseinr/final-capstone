@@ -2,7 +2,7 @@
 
 .nav {
     @include commonFlex(space-around, row, wrap);
-    background-color: $greenish-color;
+    background-color: #9e967e;
     height: 80px;
     align-items: center;
 

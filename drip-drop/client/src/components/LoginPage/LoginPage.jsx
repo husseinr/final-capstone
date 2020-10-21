@@ -1,5 +1,6 @@
 import React from 'react';
 import './loginPage.scss';
+import PageLogo from '../../assets/logos/drip-logo.png';
 
 function LoginPage(props) {
 
@@ -7,6 +8,7 @@ function LoginPage(props) {
 
     return (
         <main className="main">
+            <img src={PageLogo} alt='logo'></img>
             <section className="login">
                 <div className="login__section">
                     <label className="login__section-label"> </label>
