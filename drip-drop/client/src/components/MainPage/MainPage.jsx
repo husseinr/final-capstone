@@ -6,7 +6,7 @@ import axios from 'axios';
 import PageHeader from '../PageHeader/PageHeader';
 import StoreList from '../StoreList/StoreList';
 import CafeMenu from '../CafeMenu/CafeMenu';
-import './mainPage.scss'
+import './mainPage.scss';
 
 function MainPage(props) {
 
@@ -42,8 +42,7 @@ function MainPage(props) {
         <Route exact path="/cafes" render ={() =>     <main>
          <section>
              <div>
-                 <h1> What are you looking for today? </h1>
-                 <input type="text" placeholder="location"></input>
+                 <h1> Where will you be enjoying your Coffee? </h1>
              </div>
              <div className="cardItems">
              {cards.map(card => (

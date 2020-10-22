@@ -53,14 +53,6 @@ function CafeMenu() {
          </div>
      ));
 
-    //  const cartItems = cart.map((item) => (
-    //     <div key={item.id}>
-    //        <div>
-    //             {`${item.item} : $${item.price}`}
-    //             <input type="submit" value="remove" onClick={removeFromCart(item)}/>
-    //        </div>
-    //     </div>
-    // ));
     const cartItems = cart.map((item) => (
         <div key={item.id}>
           {`${item.item}: $${item.price}`}
