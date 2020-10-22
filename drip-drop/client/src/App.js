@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
+// import { Provider } from 'react-redux';
+// import { connect } from 'react-redux';
 import fire from './fire';
 import LoginPage from './components/LoginPage/LoginPage';
 import PageHeader from './components/LoginPage/LoginPage';
 import MainPage from './components/MainPage/MainPage'
 import './App.css';
+
+// zomato API Key 98e4399f6ca42357455570fdf403fa2e
 
 const App = () => {
   let [user, setUser] = useState("");
@@ -92,6 +96,7 @@ let userExistsListener = () => {
 
     return (
       <BrowserRouter>
+
       <div className="App">
         {user ? (
           <MainPage 

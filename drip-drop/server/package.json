@@ -19,6 +19,7 @@
     "node": "^14.13.1",
     "parser": "^0.1.4",
     "react-awesome-router": "^2.0.0",
+    "react-redux": "^7.2.1",
     "router-middleware": "^4.0.2",
     "uuid": "^8.3.1"
   }

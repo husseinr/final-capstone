@@ -1,25 +1,25 @@
 [
     {
         "id": "001",
-        "name": "Drip Coffee",
+        "name": "Calgary",
         "image":"/assets/images/coffee-mug.svg"
     },
 
     {
         "id": "002",
-        "name": "Americano",
+        "name": "Toronto",
         "image":"/assets/images/coffee-mug.svg"
     },
 
     {
         "id": "003",
-        "name": "Espresso",
+        "name": "Vancouver",
         "image":"/assets/images/coffee-mug.svg"
     },
 
     {
         "id": "004",
-        "name": "Latte",
+        "name": "Edmonton",
         "image":"/assets/images/coffee-mug.svg"
     },
 
