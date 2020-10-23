@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
-// import { Provider } from 'react-redux';
-// import { connect } from 'react-redux';
 import fire from './fire';
 import LoginPage from './components/LoginPage/LoginPage';
 import PageHeader from './components/LoginPage/LoginPage';
@@ -17,6 +15,7 @@ const App = () => {
   let [emailError, setEmailError] = useState("Please enter your email");
   let [hasAccount, setHasAccount] = useState(false);
   let [passwordError, setPasswordError] = useState("");
+
 
   let clearInputs = () => {
     setEmail('');

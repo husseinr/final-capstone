@@ -7,6 +7,7 @@ import PageHeader from '../PageHeader/PageHeader';
 import StoreList from '../StoreList/StoreList';
 import CafeMenu from '../CafeMenu/CafeMenu';
 import './mainPage.scss';
+import PlacesNearMe from "../PlacesNearMe/PlacesNearMe"
 
 function MainPage(props) {
 
@@ -43,6 +44,7 @@ function MainPage(props) {
          <section>
              <div>
                  <h1> Where will you be enjoying your Coffee? </h1>
+                 <PlacesNearMe/>
              </div>
              <div className="cardItems">
              {cards.map(card => (
@@ -55,6 +57,7 @@ function MainPage(props) {
          </section>
      </main>}
      />
+
     </Switch>
 
     {/* updates below */}

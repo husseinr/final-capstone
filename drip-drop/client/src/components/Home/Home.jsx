@@ -1,6 +1,7 @@
 import React, {useState, useEffect, } from 'react';
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import PlacesNearMe from "../PlacesNearMe/PlacesNearMe"
 
 function Home() {
     return (
@@ -11,6 +12,7 @@ function Home() {
             <div>
                 <input type="text" action={setLocationStatus} placeholder="enter your location"></input>
             </div>
+            <PlacesNearMe/>
             
         </main>
     )
