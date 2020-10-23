@@ -1,51 +1,12 @@
 import React, {useState, useEffect, } from 'react';
 import PlacesNearMe from '../PlacesNearMe/PlacesNearMe';
 import axios from 'axios';
-import { useDispatch, Provider } from "react-redux";
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import PlacesAutoComplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
-import { fetchRestaurantsByAddress } from "../../redux/DataActions/actions";
+
 
 function StoreList(props) {
-    // let [cafes, setCafes] = useState([]);
-    // const [address, setAddress] = useState('');
-    // const [coordinates, setCoordinates] = useState({lat: null, lng: null});
-    // const [selectedAddress, setSelectedAddress] = useState("");
-    // const radius = 5 * 1000;
 
-    // // const { city, cafe } = useParams();
-
-    // let getCafeList = () => {
-
-    //     axios.
-    //     get('/cafeSearch/', {
-    //         params: {lat: coordinates.lat, lng: coordinates.lng}
-    //     })
-    //   .then(response => {
-    //     setCafes(response.data);
-    //     console.log(places)
-    //     console.log(coordinates.lat, coordinates.lng)
-    //   })
-    // }
-
-    // useEffect (() => {
-    //     getCafeList()
-    // }, [], 
-
-    //  );
-
-    // const places = [];
-
-
-
-
-
-    //  const handleSelect = async (value) => {
-    //     const locationResults = await geocodeByAddress(value);
-    //     const latlng = await getLatLng(locationResults[0]);
-    //    setCoordinates(latlng);
-    //    setAddress(value);
-    //  }
     return (
         <section>
             <PlacesNearMe/>
