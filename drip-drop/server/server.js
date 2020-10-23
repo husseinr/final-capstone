@@ -8,6 +8,7 @@ const cors = require('cors');
 const itemsRoute = require('./routes/mainItemRoutes.js');
 const cafesRoute = require('./routes/cafeListRoute.js');
 const googleSearch = require('./routes/googleCafeListRoute');
+const fixedMenu = require('./routes/fixedMenuRoute');
 
 
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use(cors());
 app.use('/items', itemsRoute);
 app.use('/cafes', cafesRoute);
 app.use('/cafeSearch', googleSearch);
+app.use('/menu', fixedMenu);
 
 
 app.listen(port, () => console.log(`We're live on ${port}`))

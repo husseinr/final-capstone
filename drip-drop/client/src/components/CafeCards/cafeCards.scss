@@ -1,0 +1,24 @@
+@import '../../styles/partials/common-styles';
+
+.content {
+
+    &__card {
+        border: 1px black solid;
+        width: 100px;
+        height: 100px;
+
+        &-name {
+
+            font-size: 14px;
+
+
+        }
+
+        &-image {
+
+            height: 20px;
+
+        }
+
+    }
+}

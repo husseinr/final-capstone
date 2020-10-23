@@ -6,6 +6,7 @@ import axios from 'axios';
 import PageHeader from '../PageHeader/PageHeader';
 import StoreList from '../StoreList/StoreList';
 import CafeMenu from '../CafeMenu/CafeMenu';
+import FixedCafeMenu from '../FixedCafeMenu/FixedCafeMenu';
 import './mainPage.scss';
 import PlacesNearMe from "../PlacesNearMe/PlacesNearMe"
 
@@ -14,6 +15,7 @@ function MainPage(props) {
     const {logoutHandler} = props;
 
     let [cards, setCards] = useState([]);
+
 
     let getItemList = () => {
         axios
@@ -31,6 +33,8 @@ function MainPage(props) {
 
      );
 
+
+
     return (
     <>
     <PageHeader logoutHandler={logoutHandler} />
@@ -39,6 +43,7 @@ function MainPage(props) {
  
         <Route exact path="/cafes/:city" component={StoreList}/>
         <Route exact path="/cafes/:city/:cafe" component={CafeMenu}/>
+        <Route exact path="/menu" component={FixedCafeMenu}/>
         <Route exact path="/cafes/:city/:cafe" component={CartPage}/>
         <Route exact path="/cafes" render ={() =>     <main>
          <section>

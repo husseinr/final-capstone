@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './pageHeader.scss';
+import {getQty} from '../../actions/getAction'
+import {connect} from 'react-redux';
 
 function Pageheader(props) {
     const {logoutHandler} = props;
+    useEffect(() => {
+        getQty();
+    }, [])
     return (
 
         <nav className="nav">
@@ -14,9 +19,15 @@ function Pageheader(props) {
             <div className="nav__option">
                 <button className="nav__option-button" onClick={logoutHandler}>Log Out</button>
             </div>
+
+            <div>
+                <ion-icon name="basket"></ion-icon><button className="nav__option-button">Cart</button><span>{props.cartProps.cartQty}</span>
+            </div>
   
         </nav>
     )
 }
-
-export default Pageheader
+const mapStateToProps = state => ({
+    cartProps: state.cartState
+})
+export default connect(mapStateToProps, {getQty})(Pageheader)

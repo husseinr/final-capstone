@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import fire from './fire';
+import {Provider} from 'react-redux';
+import store from './store';
 import LoginPage from './components/LoginPage/LoginPage';
 import PageHeader from './components/LoginPage/LoginPage';
 import MainPage from './components/MainPage/MainPage'
@@ -95,6 +97,7 @@ let userExistsListener = () => {
 
     return (
       <BrowserRouter>
+      <Provider store={store}>
 
       <div className="App">
         {user ? (
@@ -114,6 +117,7 @@ let userExistsListener = () => {
             passwordError = {passwordError}/>
         )}
       </div>
+      </Provider>
       </BrowserRouter>
     );
 

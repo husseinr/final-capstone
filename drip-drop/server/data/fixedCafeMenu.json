@@ -1,0 +1,31 @@
+[
+    {
+        "item": "drip coffee",
+        "price": 2.99,
+        "id": "0500"
+    },
+
+    {
+        "item": "latte",
+        "price": 5.99,
+        "id": "0501"
+    },
+
+    {
+        "item": "cappucino",
+        "price": 3.99,
+        "id": "0502"
+    },
+
+    {
+        "item": "cold brew",
+        "price": 5.99,
+        "id": "0503"
+    },
+
+    {
+        "item": "espresso",
+        "price": 3.50,
+        "id": "0504"
+    }
+]

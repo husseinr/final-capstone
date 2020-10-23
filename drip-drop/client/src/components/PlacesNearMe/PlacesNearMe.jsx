@@ -4,6 +4,7 @@ import { useDispatch, Provider } from "react-redux";
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import PlacesAutoComplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 import CafeCards from '../CafeCards/CafeCards';
+import './placesNearMe.scss';
 
 function PlacesNearMe(props) {
     const [cafes, setCafes] = useState([]);
@@ -58,7 +59,7 @@ function PlacesNearMe(props) {
                      </PlacesAutoComplete>
                 </div>
 
-                <div>
+                <div className="cafes">
                     {cafes && cafes.map(cafe => {
                         return   <CafeCards
                         name={cafe.name}
