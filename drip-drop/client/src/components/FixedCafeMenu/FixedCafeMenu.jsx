@@ -76,7 +76,7 @@ function CafeMenu(props) {
            <div>
                 {`${item.item} : $${item.price}`}
                 {/* <input type="submit" value="add" onClick={() => addToCart(item)} /> */}
-                <input type="submit" value="add" onClick={props.addCart} />
+                <input type="submit" value="add" onClick={() => props.addCart(item.item)} />
            </div>
         </div>
     ));

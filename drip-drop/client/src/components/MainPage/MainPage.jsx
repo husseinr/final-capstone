@@ -40,11 +40,12 @@ function MainPage(props) {
     <PageHeader logoutHandler={logoutHandler} />
 
     <Switch>
- 
+        {/* <Route path="/" component={home} /> */}
+        <Route exact path="/cart" component={CartPage}/>
         <Route exact path="/cafes/:city" component={StoreList}/>
         <Route exact path="/cafes/:city/:cafe" component={CafeMenu}/>
         <Route exact path="/menu" component={FixedCafeMenu}/>
-        <Route exact path="/cafes/:city/:cafe" component={CartPage}/>
+        {/* <Route exact path="/cafes/:city/:cafe" component={CartPage}/> */}
         <Route exact path="/cafes" render ={() =>     <main>
          <section>
              <div>

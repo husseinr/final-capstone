@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import './pageHeader.scss';
 import {getQty} from '../../actions/getAction'
 import {connect} from 'react-redux';
@@ -21,7 +22,7 @@ function Pageheader(props) {
             </div>
 
             <div>
-                <ion-icon name="basket"></ion-icon><button className="nav__option-button">Cart</button><span>{props.cartProps.cartQty}</span>
+                <Link to='/cart'><ion-icon name="basket"></ion-icon><button className="nav__option-button">Cart</button><span>{props.cartProps.cartQty}</span></Link>
             </div>
   
         </nav>
