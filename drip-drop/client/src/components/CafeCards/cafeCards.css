@@ -1,0 +1,20 @@
+/*Colors*/
+/*Viewport Breakpoints*/
+/*Mobile Line Heights*/
+/*Mobile Font Sizes*/
+/*Tablet/Desktop Line Heights*/
+/*Tablet/Desktop Font Sizes*/
+.content__card {
+  border: 1px black solid;
+  width: 100px;
+  height: 100px;
+}
+
+.content__card-name {
+  font-size: 14px;
+}
+
+.content__card-image {
+  height: 20px;
+}
+/*# sourceMappingURL=cafeCards.css.map */

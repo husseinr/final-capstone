@@ -1,26 +1,16 @@
 [
-    {
-        "item": "drip coffee",
+    { 
+        "item": "dripCoffee",
         "price": 2.99,
         "cream": 0,
         "sugar": 0,
         "qty": 0,
-        "id": "0500",
+        "id": "0501",
         "inCart": false
-    },
-
-    {
-    "item": "latte",
-    "price": 2.99,
-    "cream": 0,
-    "sugar": 0,
-    "qty": 0,
-    "id": "0501",
-    "inCart": false
         },
 
     {
-    "item": "cappucino",
+    "item": "latte",
     "price": 2.99,
     "cream": 0,
     "sugar": 0,
@@ -30,7 +20,7 @@
         },
 
     {
-    "item": "cold brew",
+    "item": "cappucino",
     "price": 2.99,
     "cream": 0,
     "sugar": 0,
@@ -40,12 +30,22 @@
         },
 
     {
+        "item": "coldBrew",
+        "price": 2.99,
+        "cream": 0,
+        "sugar": 0,
+        "qty": 0,
+        "id": "0504",
+        "inCart": false
+            },
+
+    {
     "item": "espresso",
     "price": 2.99,
     "cream": 0,
     "sugar": 0,
     "qty": 0,
-    "id": "0504",
+    "id": "0505",
     "inCart": false
         }
 ]

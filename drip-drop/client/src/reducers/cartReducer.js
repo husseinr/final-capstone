@@ -6,12 +6,12 @@ let initialState = {
     products: {
 
         dripCoffee: {
-            item: "drip coffee",
+            item: "dripCoffee",
             price: 2.99,
             cream: 0,
             sugar: 0,
             qty: 0,
-            id: "0500",
+            id: "0501",
             inCart: false
         },
 
@@ -21,7 +21,7 @@ let initialState = {
             cream: 0,
             sugar: 0,
             qty: 0,
-            id: "0501",
+            id: "0502",
             inCart: false
         },
 
@@ -31,17 +31,17 @@ let initialState = {
             cream: 0,
             sugar: 0,
             qty: 0,
-            id: "0502",
+            id: "0503",
             inCart: false
         },
 
         coldBrew: {
-            item: "cold brew",
+            item: "coldBrew",
             price: 2.99,
             cream: 0,
             sugar: 0,
             qty: 0,
-            id: "0503",
+            id: "0504",
             inCart: false
         },
 
@@ -51,7 +51,7 @@ let initialState = {
             cream: 0,
             sugar: 0,
             qty: 0,
-            id: "0504",
+            id: "0505",
             inCart: false
         },
 

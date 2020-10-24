@@ -8,7 +8,8 @@ import StoreList from '../StoreList/StoreList';
 import CafeMenu from '../CafeMenu/CafeMenu';
 import FixedCafeMenu from '../FixedCafeMenu/FixedCafeMenu';
 import './mainPage.scss';
-import PlacesNearMe from "../PlacesNearMe/PlacesNearMe"
+import PlacesNearMe from "../PlacesNearMe/PlacesNearMe";
+import CoffeeImage from "../../assets/images/coffee 2.svg"
 
 function MainPage(props) {
 
@@ -60,6 +61,8 @@ function MainPage(props) {
                     key={card.id} />
              ))}
              </div>
+
+             <img src = {CoffeeImage}></img>
          </section>
      </main>}
      />

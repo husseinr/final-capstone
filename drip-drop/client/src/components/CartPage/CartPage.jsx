@@ -43,7 +43,7 @@ function CartPage({cartProps, itemQuantity, deleteItem}) {
 
             <div>
                 {itemsInCart}
-                <p>{cartProps.cartCost}</p>
+                <p>${cartProps.cartCost.toFixed(2)}</p>
             </div>
 
             

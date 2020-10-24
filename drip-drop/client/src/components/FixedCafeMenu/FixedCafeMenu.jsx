@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {addCart} from '../../actions/addAction';
 import CartPage from '../CartPage/CartPage';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
+import './fixedCafeMenu.scss';
 
 function CafeMenu(props) {
     console.log(props)
@@ -77,6 +78,7 @@ function CafeMenu(props) {
                 {`${item.item} : $${item.price}`}
                 {/* <input type="submit" value="add" onClick={() => addToCart(item)} /> */}
                 <input type="submit" value="add" onClick={() => props.addCart(item.item)} />
+                <img src={item.image} alt="drink-icon" className="card-icon"></img>
            </div>
         </div>
     ));

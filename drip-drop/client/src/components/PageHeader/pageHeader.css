@@ -1,0 +1,33 @@
+/*Colors*/
+/*Viewport Breakpoints*/
+/*Mobile Line Heights*/
+/*Mobile Font Sizes*/
+/*Tablet/Desktop Line Heights*/
+/*Tablet/Desktop Font Sizes*/
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #9e967e;
+  height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__header {
+  margin: 0;
+}
+
+.nav__header-logo {
+  margin: 0;
+}
+/*# sourceMappingURL=pageHeader.css.map */

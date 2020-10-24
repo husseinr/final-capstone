@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,MAAM,EAAE,KAAK;EACb,aAAa,EAAE,IAAI;EACnB,UAAU,EAAE,eAAe;CAE9B",
+    "sources": [
+        "fixedCafeMenu.scss"
+    ],
+    "names": [],
+    "file": "fixedCafeMenu.css"
+}
