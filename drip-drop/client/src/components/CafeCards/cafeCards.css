@@ -6,8 +6,8 @@
 /*Tablet/Desktop Font Sizes*/
 .content__card {
   border: 1px black solid;
-  width: 100px;
-  height: 100px;
+  width: 170px;
+  height: 200px;
 }
 
 .content__card-name {

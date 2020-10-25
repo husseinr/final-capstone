@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import firebase from '../../firebase'
+import firebase from '../../firebase';
+import PlacesNearMe from '../PlacesNearMe/PlacesNearMe';
+import './profilePage.scss';
 
 
 function Dashboard(props) {
@@ -33,6 +35,11 @@ function Dashboard(props) {
     return (
         <div>
             <h1>Welcome, {firebase.getCurrentUsername()}!</h1>
+            <div className="profile-hero">
+                <PlacesNearMe/>
+
+            </div>
+            <button onClick={logout}>Log Out</button>
             
         </div>
     )

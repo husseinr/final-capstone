@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import './pageHeader.scss';
 import {getQty} from '../../actions/getAction'
 import {connect} from 'react-redux';
+import PageLogo from '../../assets/logos/drip-logo.png'
 
 function Pageheader(props) {
     const {logoutHandler} = props;
@@ -14,15 +15,18 @@ function Pageheader(props) {
         <nav className="nav">
 
             <div className="nav__header">
-                <h2 className="nav__header-logo">Logo</h2>
+               <img className="nav__header-logo" src={PageLogo}/>
             </div>
 
             <div className="nav__option">
-                <button className="nav__option-button" onClick={logoutHandler}>Log Out</button>
+                {/* <button className="nav__option-button" onClick={logoutHandler}>Log Out</button> */}
             </div>
 
             <div>
-                <Link to='/cart'><ion-icon name="basket"></ion-icon><button className="nav__option-button">Cart</button><span>{props.cartProps.cartQty}</span></Link>
+                <Link to="/register"><button type="submit">Register</button></Link>
+                <Link to="/dashboard"><button type="submit">Profile</button></Link>
+                <Link to="/login"><button type="submit">Login</button></Link>
+                <Link to='/cart'><button className="nav__option-button"><ion-icon name="basket"></ion-icon>Cart<span>{props.cartProps.cartQty}</span></button></Link>
             </div>
   
         </nav>

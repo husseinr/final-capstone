@@ -10,6 +10,9 @@ function PlacesNearMe(props) {
     const [cafes, setCafes] = useState([]);
     const [address, setAddress] = useState('');
     const [coordinates, setCoordinates] = useState({lat: null, lng: null});
+    const [nearbyCoordinates, setNearbyCoordinates] = useState({lat2: null, lng2: null});
+
+
 
     useEffect(() => {
         const getCafes = async () => {
@@ -49,8 +52,7 @@ function PlacesNearMe(props) {
                                 {loading ? <p>... loading places</p> : null}
 
                                 {suggestions.map((suggestion) => {
-                                    let style = {backgroundColor: suggestion.active ? "grey" : "white"}
-                                   return <p {...getSuggestionItemProps (suggestion, {style} )}>{suggestion.description}</p> 
+                                   return <p {...getSuggestionItemProps (suggestion)}>{suggestion.description}</p> 
                                 })}
                             </div>
                          </div>
@@ -64,7 +66,12 @@ function PlacesNearMe(props) {
                         return   <CafeCards
                         name={cafe.name}
                         key={cafe.id}
-                        image={cafe.icon}/>
+                        image={cafe.icon}
+                        lat2={cafe.geometry.location.lat}
+                        lng2={cafe.geometry.location.lng}
+                        yourCoordinates={coordinates}
+                        rating={cafe.rating}
+                        photoRef={cafe.photos[0].photo_reference}/>
                     })}
                 </div>
             </div>

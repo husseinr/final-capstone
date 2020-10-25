@@ -1,0 +1,13 @@
+/*Colors*/
+/*Viewport Breakpoints*/
+/*Mobile Line Heights*/
+/*Mobile Font Sizes*/
+/*Tablet/Desktop Line Heights*/
+/*Tablet/Desktop Font Sizes*/
+.profile-hero {
+  background-image: url(../../assets/images/test-hero-image-2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 53vw;
+}
+/*# sourceMappingURL=profilePage.css.map */

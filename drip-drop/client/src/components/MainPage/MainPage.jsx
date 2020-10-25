@@ -11,8 +11,8 @@ import './mainPage.scss';
 import PlacesNearMe from "../PlacesNearMe/PlacesNearMe";
 import CoffeeImage from "../../assets/images/coffee 2.svg"
 
+// updates below
 import UpdatedHomePage from '../UpdatedHomePage/UpdatedHomePage';
-
 import UpdatedLogin from '../UpdatedLogin/UpdatedLogin';
 import Register from '../Register/Register';
 import Dashboard from '../Dashboard/Dashboard';

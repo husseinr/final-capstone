@@ -74,7 +74,6 @@ function CartPage({cartProps, itemQuantity, deleteItem}) {
                     <ion-icon onClick={() => itemQuantity('increase', item.item)} name="chevron-up-circle-outline"></ion-icon>
                     <ion-icon onClick={() => itemQuantity('decrease', item.item)} name="chevron-down-circle-outline"></ion-icon>
                     <ion-icon onClick={() => deleteItem('decrease', item.item)} name="trash-outline"></ion-icon>
-                {/* <ion-icon name="arrow-forward-ci"></ion-icon> */}
                </div>
 
            </div>

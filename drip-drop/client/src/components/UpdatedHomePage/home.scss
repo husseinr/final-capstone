@@ -1,0 +1,12 @@
+@import '../../styles/partials/common-styles';
+
+.hero {
+    width: 100%;
+    @include commonFlex(space-between,row,wrap);
+    justify-content: flex-start;
+    align-content: center;
+    background-image: url(../../assets/images/test-hero-image-3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 53vw;
+}
