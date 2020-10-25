@@ -11,6 +11,12 @@ import './mainPage.scss';
 import PlacesNearMe from "../PlacesNearMe/PlacesNearMe";
 import CoffeeImage from "../../assets/images/coffee 2.svg"
 
+import UpdatedHomePage from '../UpdatedHomePage/UpdatedHomePage';
+
+import UpdatedLogin from '../UpdatedLogin/UpdatedLogin';
+import Register from '../Register/Register';
+import Dashboard from '../Dashboard/Dashboard';
+
 function MainPage(props) {
 
     const {logoutHandler} = props;
@@ -41,7 +47,13 @@ function MainPage(props) {
     <PageHeader logoutHandler={logoutHandler} />
 
     <Switch>
+        <Route exact path="/" component={UpdatedHomePage}/>
+        <Route exact path="/login" component={UpdatedLogin}/>
+        <Route exact path="/register" component={Register}/>
+        <Route exact path="/dashboard" component={Dashboard}/>
+
         {/* <Route path="/" component={home} /> */}
+   
         <Route exact path="/cart" component={CartPage}/>
         <Route exact path="/cafes/:city" component={StoreList}/>
         <Route exact path="/cafes/:city/:cafe" component={CafeMenu}/>
