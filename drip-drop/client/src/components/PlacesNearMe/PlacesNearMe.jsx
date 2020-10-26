@@ -1,12 +1,15 @@
 import React, {useState, useEffect, } from 'react';
 import axios from 'axios';
 import { useDispatch, Provider } from "react-redux";
+import {connect} from 'react-redux';
+import {getCoordinates} from '../../actions/getCoordinates';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import PlacesAutoComplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 import CafeCards from '../CafeCards/CafeCards';
+import Map from '../Map/Map'
 import './placesNearMe.scss';
 
-function PlacesNearMe(props) {
+function PlacesNearMe(props,) {
     const [cafes, setCafes] = useState([]);
     const [address, setAddress] = useState('');
     const [coordinates, setCoordinates] = useState({lat: null, lng: null});
@@ -24,15 +27,15 @@ function PlacesNearMe(props) {
         getCafes();
       }, [coordinates]);
 
-
-
-
      const handleSelect = async (value) => {
         const locationResults = await geocodeByAddress(value);
         const latlng = await getLatLng(locationResults[0]);
        setCoordinates(latlng);
        setAddress(value);
      }
+
+
+
 
 
     return (
@@ -71,13 +74,20 @@ function PlacesNearMe(props) {
                         lng2={cafe.geometry.location.lng}
                         yourCoordinates={coordinates}
                         rating={cafe.rating}
-                        photoRef={cafe.photos[0].photo_reference}/>
+                        photoRef={cafe.photos[0].photo_reference}
+                        getCoord={props.getCoordinates}/>
                     })}
                 </div>
             </div>
+
+            {/* <Map yourCoordinates={coordinates}/> */}
             
         </section>
     )
 }
 
-export default PlacesNearMe
+const mapStateToProps = state => ({
+    coordinateProps: state.coordinateState
+});
+
+export default connect(mapStateToProps, {getCoordinates} )(PlacesNearMe)

@@ -29,9 +29,9 @@ function CafeMenu() {
 
      );
 
-     useEffect(() => {
-        total();
-      }, [cart]);
+    //  useEffect(() => {
+    //     total();
+    //   }, [cart]);
 
      const addToCart = (item) => {
         setCart([...cart, item]);
@@ -69,18 +69,13 @@ function CafeMenu() {
 
     //  }
 
-    const total = () => {
-        let totalVal = 0;
-        for (let i = 0; i < cart.length; i++) {
-          totalVal += cart[i].price;
-        }
-        setCartTotal(totalVal);
-      };
-
-
- 
-
-
+    // const total = () => {
+    //     let totalVal = 0;
+    //     for (let i = 0; i < cart.length; i++) {
+    //       totalVal += cart[i].price;
+    //     }
+    //     setCartTotal(totalVal);
+    //   };
      
     return (
         <div>
@@ -88,8 +83,6 @@ function CafeMenu() {
                 <div>{menuItems}</div>
                 <div>Items in Cart</div>
                 <div>{cartItems}</div>
-                <div>Total</div>
-                <p>$ {cartTotal}</p>
             </div>
         </div>
     )

@@ -5,14 +5,21 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import {itemQuantity, deleteItem} from '../../actions/itemQuantity';
+import {getCoordinates} from '../../actions/getCoordinates';
+import Map from '../Map/Map';
 
 
-function CartPage({cartProps, itemQuantity, deleteItem}) {
+function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, deleteItem}) {
     const stripePromise = loadStripe("pk_test_51Hfv8NExWXMrozUbXJA8P6T4RvVqoWKEol2mEsigT2bFSWANUA4Grtx7HG2ybOIi2bjqslmS1IAG2CwJApJ0NLhw000m3PsCk8")
 
     console.log(cartProps)
     let itemsInCart = [];
     const [paymentStatus, setPaymentStatus] = useState('')
+
+    let center = {
+        lat: coordinateProps[0],
+        lng: coordinateProps[1],
+      };
 
 
     Object.keys(cartProps.products).forEach( function(item) {
@@ -24,9 +31,6 @@ function CartPage({cartProps, itemQuantity, deleteItem}) {
 
         console.log(itemsInCart)
     });
-
-
-
 
     const Checkout = ({paymentReceived}) => {
 
@@ -73,7 +77,7 @@ function CartPage({cartProps, itemQuantity, deleteItem}) {
                     <p>{item.qty}</p>
                     <ion-icon onClick={() => itemQuantity('increase', item.item)} name="chevron-up-circle-outline"></ion-icon>
                     <ion-icon onClick={() => itemQuantity('decrease', item.item)} name="chevron-down-circle-outline"></ion-icon>
-                    <ion-icon onClick={() => deleteItem('decrease', item.item)} name="trash-outline"></ion-icon>
+                    <ion-icon onClick={() => deleteItem('delete', item.item)} name="trash-outline"></ion-icon>
                </div>
 
            </div>
@@ -81,7 +85,14 @@ function CartPage({cartProps, itemQuantity, deleteItem}) {
     })
 
     if (paymentStatus === "Payment Received") {
-        return <p>Enjoy your Brew!</p>
+        return (
+        <>
+            <p>Enjoy your Brew!</p>
+            <Map center={center}
+            lat={coordinateProps.lat}
+            lng={coordinateProps.lng}/>
+        </>
+        )
     }
 
     return (
@@ -104,7 +115,8 @@ function CartPage({cartProps, itemQuantity, deleteItem}) {
 }
 
 const mapStateToProps = state => ({
-    cartProps: state.cartState
+    cartProps: state.cartState,
+    coordinateProps: state.coordinateState
 });
 
-export default connect(mapStateToProps, {itemQuantity, deleteItem})(CartPage)
+export default connect(mapStateToProps, {itemQuantity, deleteItem, getCoordinates})(CartPage)

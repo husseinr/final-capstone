@@ -1,15 +1,21 @@
 import React, {useState, useEffect, } from 'react';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
+import {connect} from 'react-redux';
 import './cafeCards.scss';
 
 
 function CafeCards(props) {
 
-        // distance calculator in KM
+        // cafe distance calculator from user address in KM
         let lat1 = props.yourCoordinates.lat;
         let lng1 = props.yourCoordinates.lng;
         let lat2 = props.lat2;
         let lng2 = props.lng2;
+
+        let cartMapCoord = [
+            lat2,
+            lng2
+        ]
 
         const R = 6371e3;
         const φ1 = lat1 * Math.PI/180; 
@@ -26,10 +32,12 @@ function CafeCards(props) {
 
         const imageURL = 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=960&photoreference=';
         const key = '&key=AIzaSyAoxLHGoMhAIczJRhM0jRRQwhGR4FVSBzE';
+
+        let setCafeMapCoord = props.getCoord;
     return (
         <Link to='/menu'>
         <section className="content">
-            <div className="content__card" key={props.key}>
+            <div className="content__card" key={props.key} onClick={() => setCafeMapCoord(cartMapCoord,'update')}>
                 <p className="content__card-name">{props.name}</p>
                 {/* <img className="content__card-image" src={props.image} alt="cafe-image"></img> */}
                 <p>{props.rating}</p>
@@ -42,4 +50,8 @@ function CafeCards(props) {
     )
 }
 
-export default CafeCards
+const mapStateToProps = state => ({
+    coordinateProps: state.coordinateState
+});
+
+export default connect(mapStateToProps)(CafeCards)
