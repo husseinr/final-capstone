@@ -1,33 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import HeroImage from '../../assets/images/test-hero-image-3.png';
+import LoginPageHeader from '../LoginPageHeader/LoginPageHeader'
 import './home.scss';
+import PlacesNearMe from '../PlacesNearMe/PlacesNearMe';
 
 function UpdatedHomePage() {
     return (
         <div>
+            <LoginPageHeader/>
             <main>
-            {/* <Link to="/register"><button type="submit">Register</button></Link>
-            <Link to="/dashboard"><button type="submit">Profile</button></Link>
-            <Link to="/login"><button type="submit">Login</button></Link> */}
-            <div>
-    
-            </div>
-            <div className="hero">
-            <div>
-                <h2>Drip Drop</h2>
-                <p>Coffee to go from Cafes near you!</p>
-            </div>
-    
-     
-            {/* <img className="hero__image" src={HeroImage}></img> */}
-            </div>
-        
-
+                <div className="hero">
+                    <div className="hero__description">
+                        <h1 className="hero__description-header">Drip Drop</h1>
+                        <p className="hero__description-explained">Coffee to go from Cafes near you! Simply select a nearby cafe, place your order and then pick-up.</p>
+                    </div>
+                </div>
             </main>
-            {/* <h1>Drip Drop</h1> */}
-  
-
         </div>
     )
 }

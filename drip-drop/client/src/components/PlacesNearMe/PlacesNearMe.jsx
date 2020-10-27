@@ -13,7 +13,6 @@ function PlacesNearMe(props,) {
     const [cafes, setCafes] = useState([]);
     const [address, setAddress] = useState('');
     const [coordinates, setCoordinates] = useState({lat: null, lng: null});
-    const [nearbyCoordinates, setNearbyCoordinates] = useState({lat2: null, lng2: null});
 
 
 
@@ -34,38 +33,34 @@ function PlacesNearMe(props,) {
        setAddress(value);
      }
 
-
-
-
+     let filteredCafes = cafes.filter(place => place.name !== "Tim Hortons" && place.name !=="Starbucks" && place.name !== "McDonald's")
 
     return (
-        <section>
 
-            <div>
-                <div>
+        <section className="location-section">
+                <div className="location-section__search">
                      <PlacesAutoComplete value={address} onChange={setAddress} onSelect={handleSelect}>
                          {({getInputProps, suggestions, getSuggestionItemProps, loading}) => (
-                        <div>
-                            {/* <p>Latitude: {coordinates.lat}</p>
-                            <p>Longitude: {coordinates.lng}</p> */}
-                            <div>
-                                <input {...getInputProps({placeholder: "what's your address"})}/>
+                        <div className="location-section__search-input">
+                            <div className="location-section__search-input-field">
+                                <input className="location-section__search-input-field-bar" {...getInputProps({placeholder: "what's your address"})}/>
                             </div>
-                            <div>
-                                {loading ? <p>... loading places</p> : null}
+
+                            <div className="location-section__search-input-suggestions">
+                                {loading ? <p className="location-section__search-input-suggestions-loading">... loading places</p> : null}
 
                                 {suggestions.map((suggestion) => {
-                                   return <p {...getSuggestionItemProps (suggestion)}>{suggestion.description}</p> 
+                                   return <p className="location-section__search-input-suggestions-results" {...getSuggestionItemProps (suggestion)}>{suggestion.description}</p> 
                                 })}
                             </div>
-                         </div>
+                        </div>
                          )}
 
                      </PlacesAutoComplete>
                 </div>
 
-                <div className="cafes">
-                    {cafes && cafes.map(cafe => {
+                <div className="location-section__cards">
+                    {filteredCafes && filteredCafes.map(cafe => {
                         return   <CafeCards
                         name={cafe.name}
                         key={cafe.id}
@@ -78,10 +73,6 @@ function PlacesNearMe(props,) {
                         getCoord={props.getCoordinates}/>
                     })}
                 </div>
-            </div>
-
-            {/* <Map yourCoordinates={coordinates}/> */}
-            
         </section>
     )
 }

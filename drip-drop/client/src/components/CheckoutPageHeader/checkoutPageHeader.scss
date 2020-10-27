@@ -1,12 +1,12 @@
 @import '../../styles/partials/common-styles';
 
-.main-header {
+.cart-header {
     width: 100%;
     @include commonFlex(space-between, row, wrap);
 
     &__nav {
         @include commonFlex(space-between, row, wrap);
-        background-color: $drop-grey;
+        background-color: $drop-peach;
         height: 80px;
         width: 100%;
         align-items: center;
@@ -16,16 +16,13 @@
             margin-left: 10px;
 
 
-            &-text {
-                @include soraBold;
+            &-image {
                 margin: 0;
-                color: $drop-green;
-      
+                height: 80px;
             }
         }
 
-        &-options {
-            @include commonFlex(space-between, row, wrap);
+        &-option {
             margin-right: 10px;
 
             &-button {
@@ -36,7 +33,7 @@
                 color: $drop-white;
                 background-color: $drop-green;
                 margin-left: 15px;
-
+                
             }
         }
     }

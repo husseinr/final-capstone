@@ -1,34 +1,31 @@
 @import '../../styles/partials/common-styles';
-
-.main-header {
+.login-header{
     width: 100%;
     @include commonFlex(space-between, row, wrap);
 
     &__nav {
         @include commonFlex(space-between, row, wrap);
-        background-color: $drop-grey;
+        background-color: $drop-peach;
         height: 80px;
         width: 100%;
         align-items: center;
-
+        &-header {
+    
+            margin: 0;
+        }
+    
         &-logo {
             margin: 0;
+            height: 80px;
             margin-left: 10px;
-
-
-            &-text {
-                @include soraBold;
-                margin: 0;
-                color: $drop-green;
-      
-            }
         }
-
-        &-options {
+    
+        &-buttons {
+            // width: 40%;
             @include commonFlex(space-between, row, wrap);
             margin-right: 10px;
-
-            &-button {
+    
+            &-register {
                 width: 10em;
                 border: none;
                 height: 48px;
@@ -36,7 +33,16 @@
                 color: $drop-white;
                 background-color: $drop-green;
                 margin-left: 15px;
-
+            }
+    
+            &-login {
+                width: 10em;
+                border: none;
+                height: 48px;
+                border-radius: 32px;
+                color: $drop-white;
+                background-color: $drop-green;
+                margin-left: 15px;
             }
         }
     }

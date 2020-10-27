@@ -29,9 +29,6 @@ function CafeMenu() {
 
      );
 
-    //  useEffect(() => {
-    //     total();
-    //   }, [cart]);
 
      const addToCart = (item) => {
         setCart([...cart, item]);
@@ -59,23 +56,6 @@ function CafeMenu() {
           <input type="submit" value="remove" onClick={() => removeFromCart(item)} />
         </div>
       ));
-
-  
-
-    //  const totalPrice = () => {
-    //      let addTotal = (accumulator, currentValue) => accumulator + currentValue;
-    //      let total = cart.addTotal;
-    //      setCartTotal(addTotal)
-
-    //  }
-
-    // const total = () => {
-    //     let totalVal = 0;
-    //     for (let i = 0; i < cart.length; i++) {
-    //       totalVal += cart[i].price;
-    //     }
-    //     setCartTotal(totalVal);
-    //   };
      
     return (
         <div>

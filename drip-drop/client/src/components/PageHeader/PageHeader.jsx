@@ -11,25 +11,21 @@ function Pageheader(props) {
         getQty();
     }, [])
     return (
+        <header className="main-header">
+            <nav className="main-header__nav">
 
-        <nav className="nav">
+                <div className="main-header__nav-logo">
+                    <h2 className="main-header__nav-logo-text">Drip Drop</h2>
+                </div>
 
-            <div className="nav__header">
-               <img className="nav__header-logo" src={PageLogo}/>
-            </div>
-
-            <div className="nav__option">
-                {/* <button className="nav__option-button" onClick={logoutHandler}>Log Out</button> */}
-            </div>
-
-            <div>
-                <Link to="/register"><button type="submit">Register</button></Link>
-                <Link to="/dashboard"><button type="submit">Profile</button></Link>
-                <Link to="/login"><button type="submit">Login</button></Link>
-                <Link to='/cart'><button className="nav__option-button"><ion-icon name="basket"></ion-icon>Cart<span>{props.cartProps.cartQty}</span></button></Link>
-            </div>
-  
-        </nav>
+                <div className="main-header__nav-options">
+                    {/* <h2>Welcome, {props.username}!</h2> */}
+                    <Link to="/profile"><button className="main-header__nav-options-button" type="submit">Profile</button></Link>
+                    <Link to='/cart'><button className="main-header__nav-options-button"><ion-icon name="basket"></ion-icon>Cart<span>{props.cartProps.cartQty}</span></button></Link>
+                    <button className="main-header__nav-options-button" onClick={props.logout}>Log Out</button>
+                </div>
+            </nav>
+        </header>
     )
 }
 const mapStateToProps = state => ({

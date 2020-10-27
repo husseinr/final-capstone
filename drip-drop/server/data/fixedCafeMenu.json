@@ -6,7 +6,8 @@
         "sugar": 0,
         "qty": 0,
         "id": "0501",
-        "inCart": false
+        "inCart": false,
+        "image":"/assets/images/hot-drink.svg"
         },
 
     {
@@ -16,7 +17,8 @@
     "sugar": 0,
     "qty": 0,
     "id": "0502",
-    "inCart": false
+    "inCart": false,
+    "image":"/assets/images/coffee-latte.svg"
         },
 
     {
@@ -26,7 +28,8 @@
     "sugar": 0,
     "qty": 0,
     "id": "0503",
-    "inCart": false
+    "inCart": false,
+    "image":"/assets/images/cappuccino.svg"
         },
 
     {
@@ -36,7 +39,8 @@
         "sugar": 0,
         "qty": 0,
         "id": "0504",
-        "inCart": false
+        "inCart": false,
+        "image":"/assets/images/iced-coffee.svg"
             },
 
     {
@@ -46,6 +50,7 @@
     "sugar": 0,
     "qty": 0,
     "id": "0505",
-    "inCart": false
+    "inCart": false,
+    "image":"/assets/images/espresso.svg"
         }
 ]

@@ -34,15 +34,28 @@ function CafeCards(props) {
         const key = '&key=AIzaSyAoxLHGoMhAIczJRhM0jRRQwhGR4FVSBzE';
 
         let setCafeMapCoord = props.getCoord;
+
+        // style={{backgroundImage: url(`${imageURL + props.photoRef + key}`)}
+
+        let cafeBackground = imageURL + props.photoRef + key
+        console.log(cafeBackground)
+        
     return (
         <Link to='/menu'>
         <section className="content">
-            <div className="content__card" key={props.key} onClick={() => setCafeMapCoord(cartMapCoord,'update')}>
-                <p className="content__card-name">{props.name}</p>
-                {/* <img className="content__card-image" src={props.image} alt="cafe-image"></img> */}
-                <p>{props.rating}</p>
-                <p>distance: {distance.toFixed(2)} km </p>
-                <img className="content__card-image" src={imageURL + props.photoRef + key}/>
+            <div className="content__card" key={props.key} onClick={() => setCafeMapCoord(cartMapCoord,'update')} style={{ backgroundImage: `url(${cafeBackground})`, backgroundSize: "cover",}}>
+                <div className="content__card-rating">
+                    <p className="content__card-rating-result content__card-items">{props.rating}<span><ion-icon name="star"></ion-icon></span></p>
+                </div>
+                <div className="content__card-info">
+                    <div className="content__card-info-container">
+                        <p className="content__card-info-container-name content__card-items">{props.name}</p>
+                    </div>
+                    <div className="content__card-info-container">
+                        <p className="content__card-info-container-distance content__card-items">{distance.toFixed(2)} km </p>
+                    </div>
+                    
+                </div>
             </div>
         </section>
         </Link>

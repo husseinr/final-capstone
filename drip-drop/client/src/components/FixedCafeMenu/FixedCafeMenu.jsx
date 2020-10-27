@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {addCart} from '../../actions/addAction';
 import CartPage from '../CartPage/CartPage';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
+import PageHeader from '../../components/PageHeader/PageHeader';
 import './fixedCafeMenu.scss';
 
 function CafeMenu(props) {
@@ -74,11 +75,11 @@ function CafeMenu(props) {
 
       const menuItems = menu.map((item) => (
         <div key={item.id}>
-           <div>
-                {`${item.item} : $${item.price}`}
-                {/* <input type="submit" value="add" onClick={() => addToCart(item)} /> */}
-                <input type="submit" value="add" onClick={() => props.addCart(item.item)} />
-                <img src={item.image} alt="drink-icon" className="card-icon"></img>
+           <div className="menu-card">
+               <p className="menu-card__item">{item.item}</p>
+               <p className="menu-card__price">${item.price}</p>
+                <input className="menu-card__submit" type="submit" value="add" onClick={() => props.addCart(item.item)} />
+                <img className="menu-card__image" src={item.image} alt="drink-icon" ></img>
            </div>
         </div>
     ));
@@ -119,15 +120,15 @@ function CafeMenu(props) {
 
      
     return (
+        <>
+        <PageHeader/>
         <div>
             <div>
                 <div>{menuItems}</div>
                 <div>Items in Cart</div>
-                {/* <div>{cartItems}</div> */}
-                <div>Total</div>
-                {/* <p>$ {cartTotal}</p> */}
             </div>
         </div>
+        </>
     )
 }
 

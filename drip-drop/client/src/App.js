@@ -1,126 +1,71 @@
 import React, {useState, useEffect} from 'react';
 import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
-import fire from './fire';
 import {Provider} from 'react-redux';
 import store from './store';
-import LoginPage from './components/LoginPage/LoginPage';
-import PageHeader from './components/LoginPage/LoginPage';
-import MainPage from './components/MainPage/MainPage'
-import './App.css';
+import firebase from './firebase';
+import UpdatedLogin from './components/UpdatedLogin/UpdatedLogin';
+import Register from './components/Register/Register';
+import UpdatedHomePage from './components/UpdatedHomePage/UpdatedHomePage';
+import Profile from './components/ProfilePage/ProfilePage';
+import Menu from './components/FixedCafeMenu/FixedCafeMenu';
+import CartPage from './components/CartPage/CartPage';
 
+export default function App() {
 
-const App = () => {
-//   let [user, setUser] = useState("");
-//   let [email, setEmail] = useState("");
-//   let [password, setPassword] = useState("");
-//   let [emailError, setEmailError] = useState("Please enter your email");
-//   let [hasAccount, setHasAccount] = useState(false);
-//   let [passwordError, setPasswordError] = useState("");
+    const [firebaseIntialized, setFirebaseIntialized] = useState(false)
 
-
-//   let clearInputs = () => {
-//     setEmail('');
-//     setPassword('');
-//   }
-  
-//   let clearErrors = () => {
-//     setEmailError('');
-//     setPasswordError('');
-//   }
-
-
-//  let loginHandler = () => {
-//    clearErrors();
-//   fire
-//   .auth()
-//   .signInWithEmailAndPassword(email, password)
-//   .catch(err => {
-//     switch (err.code){
-//       case "auth/invalid-email":
-//       case "auth/user-disabled":
-//       case "auth/user-not-found":
-//         setEmailError(err.message)
-//         break;
-//         case "auth/wrong-password":
-//           setPasswordError(err.message)
-//           break;
-//       }
-//     }
-//   )
-//  }
-
-//  let signupHandler = () => {
-//   clearErrors();
-//   fire
-//   .auth()
-//   .createUserWithEmailAndPassword(email, password)
-//   .catch(err => {
-//     switch (err.code){
-//       case "auth/email-already-in-use":
-//       case "auth/invalid-email":
-//         setEmailError(err.message)
-//         break;
-//         case "auth/weak-password":
-//           setPasswordError(err.message)
-//           break;
-//       }
-//     }
-//   )
-//  }
-
-//  let logoutHandler = () => {
-//    fire.auth().signOut();
-//  }
-
-// let userExistsListener = () => {
-//   fire
-//   .auth()
-//   .onAuthStateChanged((user => {
-//       if(user) {
-//         clearInputs();
-//         setUser(user)}
-//       else {
-//         setUser('')
-//         }
-//       }
-//     )
-//   )
-// }
-
-//   useEffect(() => {
-//     userExistsListener();
-//     },[],
-//   )
-
-
-
-    return (
-      <BrowserRouter>
-      <Provider store={store}>
-
-      <div className="App">
-        {/* {user ? (
-          <MainPage 
-            logoutHandler={logoutHandler}/>
-        ) : (
-          <LoginPage 
-            email={email}
-            setEmail={setEmail}
-            password={password}
-            setPassword={setPassword}
-            loginHandler = {loginHandler}
-            signupHandler = {signupHandler}
-            hasAccount= {hasAccount}
-            setHasAccount={setHasAccount}
-            emailError = {emailError}
-            passwordError = {passwordError}/>
-        )} */}
-        <MainPage/>
-      </div>
-      </Provider>
-      </BrowserRouter>
-    );
-
+    useEffect(() => {
+        firebase.isInitialized().then(value => {
+            setFirebaseIntialized(value)
+        })
+    })
+    return firebaseIntialized !== false ? (
+        <div>
+            <BrowserRouter>
+              <Provider store={store}>
+                    <Switch>
+                        <Route exact path="/" component={UpdatedHomePage}/>
+                        <Route exact path="/login" component={UpdatedLogin}/>
+                        <Route exact path="/register" component={Register}/>
+                        <Route exact path="/profile" component={Profile}/>
+                        <Route exact path="/menu" component={Menu}/>
+                        <Route exact path="/cart" component={CartPage}/>
+                    </Switch>
+              </Provider>
+            </BrowserRouter>
+            
+        </div>
+    ) : <h2>Loading... </h2>
 }
 
-export default App;
+// import React, {useState, useEffect} from 'react';
+// import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
+// import firebase from '../../firebase';
+// import UpdatedLogin from '../UpdatedLogin/UpdatedLogin';
+// import Register from '../Register/Register';
+// import UpdatedHomePage from '../UpdatedHomePage/UpdatedHomePage';
+// import Profile from '../ProfilePage/ProfilePage';
+
+// export default function UpdatedAppJS() {
+
+//     const [firebaseIntialized, setFirebaseIntialized] = useState(false)
+
+//     useEffect(() => {
+//         firebase.initialized().then(value => {
+//             setFirebaseIntialized(value)
+//         })
+//     })
+//     return firebaseIntialized !== false ? (
+//         <div>
+//             <BrowserRouter>
+//                 <Switch>
+//                     <Route exact path="/" component={UpdatedHomePage}/>
+//                     <Route exact path="/login" component={UpdatedLogin}/>
+//                     <Route exact path="/register" component={Register}/>
+//                     <Route exact path="/profile" component={Profile}/>
+//                 </Switch>
+//             </BrowserRouter>
+            
+//         </div>
+//     ) : <h2>Loading... </h2>
+// }

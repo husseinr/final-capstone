@@ -6,7 +6,9 @@ import axios from 'axios';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import {itemQuantity, deleteItem} from '../../actions/itemQuantity';
 import {getCoordinates} from '../../actions/getCoordinates';
+import PageHeader from '../../components/PageHeader/PageHeader';
 import Map from '../Map/Map';
+import CheckoutPageHeader from '../../components/CheckoutPageHeader/CheckoutPageHeader';
 
 
 function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, deleteItem}) {
@@ -48,7 +50,7 @@ function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, del
             const {id} = paymentMethod;
 
             try {
-                const {data} = await axios.post('/stripePayment', {id, amount: 1000});
+                const {data} = await axios.post('/stripePayment', {id, amount: cartProps.cartCost.toFixed(2)*100});
                 console.log(data)
                 paymentReceived();
             }
@@ -87,6 +89,7 @@ function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, del
     if (paymentStatus === "Payment Received") {
         return (
         <>
+            <CheckoutPageHeader />
             <p>Enjoy your Brew!</p>
             <Map center={center}
             lat={coordinateProps.lat}
@@ -96,19 +99,21 @@ function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, del
     }
 
     return (
+
         <Elements stripe={stripePromise}>
-        <div>
-            <h1>Cart Page</h1>
-
+            <PageHeader/>
             <div>
-                {itemsInCart}
-                <p>${cartProps.cartCost.toFixed(2)}</p>
+                <h1>Cart Page</h1>
+
+                <div>
+                    {itemsInCart}
+                    <p>${cartProps.cartCost.toFixed(2)}</p>
+                </div>
+
+                <Checkout paymentReceived={() => {setPaymentStatus('Payment Received')}}/>
+
+                
             </div>
-
-            <Checkout paymentReceived={() => {setPaymentStatus('Payment Received')}}/>
-
-            
-        </div>
         </Elements>
  
     )

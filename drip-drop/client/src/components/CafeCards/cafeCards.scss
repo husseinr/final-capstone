@@ -1,24 +1,68 @@
 @import '../../styles/partials/common-styles';
+a {
+    text-decoration: none;
+}
 
 .content {
+    @include commonFlex(space-around, row, wrap);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1em;
 
     &__card {
-        border: 1px black solid;
-        width: 170px;
+        width: 400px;
         height: 200px;
+        border-radius: 16px;
+        margin-top: 3em;
+        padding-bottom: 10px;
+        position: relative;
 
-        &-name {
+        &-rating {
+            width: 50px;
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            vertical-align: middle;
 
+            &-result {
+      
+            }
+
+        }
+
+        &-info {
+            @include commonFlex(space-between, row, wrap);
+            align-content: flex-end;
+            height: 90%;
+            width: 93%;
+            margin-left: 1em;
+
+            &-container {
+
+                &-name {
+                    width: 10em;
+                    vertical-align: middle;
+                    @include soraReg;
+    
+                }
+    
+                &-distance {
+                    width: 70px;
+                    @include soraBold;
+                }
+                
+            }
+        }
+
+        &-items {
+            margin: 0;
             font-size: 14px;
-
-
+            font-weight: bold;
+            text-align: center;
+            color: $drop-white;
+            border-radius: 15px;
+            background-color: $drop-green;
+            border: black solid 1px;
         }
-
-        &-image {
-
-            height: 20px;
-
-        }
-
     }
 }

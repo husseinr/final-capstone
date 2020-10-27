@@ -5,8 +5,23 @@
     @include commonFlex(space-between,row,wrap);
     justify-content: flex-start;
     align-content: center;
-    background-image: url(../../assets/images/test-hero-image-3.png);
+    background-image: url(../../assets/images/main-hero.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 53vw;
+
+    &__description {
+        width:25%;
+        margin-left: 10%;
+
+        &-header {
+            color: $drop-green;
+            font-size: 4rem;
+        }
+
+        &-explained {
+            color: $drop-green;
+            line-height: $paragraph-line-height;
+        }
+    }
 }
