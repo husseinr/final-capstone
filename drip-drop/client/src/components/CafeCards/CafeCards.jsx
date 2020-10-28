@@ -16,8 +16,7 @@ function CafeCards(props) {
             lat2,
             lng2
         ]
-
-
+        
         const R = 6371e3;
         const φ1 = lat1 * Math.PI/180; 
         const φ2 = lat2 * Math.PI/180;

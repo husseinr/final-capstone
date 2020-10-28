@@ -2,7 +2,7 @@ import React, {useState, useEffect, } from 'react';
 import {connect} from 'react-redux';
 import {getCoordinates} from '../../actions/getCoordinates';
 import {getCafe} from '../../actions/getCafe';
-import { GoogleMap, LoadScript, useLoadScript, Marker, InfoWindow, DirectionsRenderer, DirectionsService } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, useLoadScript, Marker} from '@react-google-maps/api';
 import mapStyle from'./mapStyle';
 import './map.scss'
 

@@ -1,14 +1,16 @@
 @import '../../styles/partials/common-styles';
 
 .profile-main {
-    background-image: url(../../assets/images/main-hero.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 48vw;
+    // background-image: url(../../assets/images/main-hero.png);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // height: 48vw;
 
     &__hero {
-
+            // background-image: url(../../assets/images/profile-banner.jpg);
+            // background-repeat: repeat;
+            // background-size: contain;
+            // height: 25vw;
     }
-
 }
 

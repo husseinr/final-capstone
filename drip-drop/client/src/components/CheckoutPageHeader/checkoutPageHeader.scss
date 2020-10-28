@@ -7,19 +7,21 @@
 
     &__nav {
         @include commonFlex(space-between, row, wrap);
-        background-color: $drop-peach;
+        background-color: $drop-grey;
         height: 80px;
         width: 100%;
         align-items: center;
 
         &-logo {
             margin: 0;
-            margin-left: 10px;
+            margin-left: 6%;
 
 
-            &-image {
+            &-text {
+                @include soraBold;
                 margin: 0;
-                height: 80px;
+                color: $drop-green;
+
             }
         }
 

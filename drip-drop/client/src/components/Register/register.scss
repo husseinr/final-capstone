@@ -1,8 +1,11 @@
 @import '../../styles/partials/common-styles';
 
 .register-main {
-    background-color: $drop-grey;
+    background-color: $drop-white;
     height:100vh;
+    background-image: url(../../assets/images/drop-background.png);
+    background-size: contain;
+    background-repeat: repeat;
 
 }
 
@@ -15,21 +18,25 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 50%;
+        width: 25%;
         height: 50vh;
-        background-color: $drop-peach;
-        padding: 0 10%;
+        background-color: $drop-grey;
+        padding: 0 3%;
         border-radius: 2em;
 
         &-input{
             padding: 0 1em;
             border: none;
             height: 48px;
-            border-radius: 32px;
             color: $drop-white;
             background-color: $drop-green;
             color: $drop-white;
+            border-radius: 15px;
+            outline: none;
+        }
 
+        &-input::placeholder{
+            color: $drop-white;
         }
 
         &-button {
@@ -37,7 +44,7 @@
             width: 100%;
             border: none;
             height: 48px;
-            border-radius: 32px;
+            border-radius: 15px;
             color: $drop-white;
             background-color: $drop-green;
 

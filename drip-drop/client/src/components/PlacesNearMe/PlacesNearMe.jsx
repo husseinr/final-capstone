@@ -1,13 +1,10 @@
 import React, {useState, useEffect, } from 'react';
 import axios from 'axios';
-import { useDispatch, Provider } from "react-redux";
 import {connect} from 'react-redux';
 import {getCoordinates} from '../../actions/getCoordinates';
 import {getCafe} from '../../actions/getCafe';
-import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import PlacesAutoComplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 import CafeCards from '../CafeCards/CafeCards';
-import Map from '../Map/Map'
 import './placesNearMe.scss';
 
 function PlacesNearMe(props) {
@@ -40,6 +37,11 @@ function PlacesNearMe(props) {
 
         <section className="location-section">
                 <div className="location-section__search">
+                    <div className="location-section__search-message">
+                        <p className="location-section__search-message-slogan">Find Your Perfect Cup</p>
+                        <p className="location-section__search-message-action">Search for a Cafe Near You</p>
+                    </div>
+
                      <PlacesAutoComplete value={address} onChange={setAddress} onSelect={handleSelect}>
                          {({getInputProps, suggestions, getSuggestionItemProps, loading}) => (
                         <div className="location-section__search-input">
@@ -48,7 +50,7 @@ function PlacesNearMe(props) {
                             </div>
 
                             <div className="location-section__search-input-suggestions">
-                                {loading ? <p className="location-section__search-input-suggestions-loading">... loading places</p> : null}
+                                {loading ? <p className="location-section__search-input-suggestions-loading">... loading cafes</p> : null}
 
                                 {suggestions.map((suggestion) => {
                                    return <p className="location-section__search-input-suggestions-results" {...getSuggestionItemProps (suggestion)}>{suggestion.description}</p> 
@@ -71,7 +73,7 @@ function PlacesNearMe(props) {
                         lng2={cafe.geometry.location.lng}
                         yourCoordinates={coordinates}
                         rating={cafe.rating}
-                        photoRef={cafe.photos[0].photo_reference}
+                        photoRef={cafe.photos && cafe.photos[0].photo_reference}
                         getCoord={props.getCoordinates}
                         getCafe={props.getCafe}/>
                     })}

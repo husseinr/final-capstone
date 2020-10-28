@@ -1,16 +1,28 @@
 @import '../../styles/partials/common-styles';
-.menu-section__items-cards {
 
-    @include commonFlex(space-between, row, wrap);
-    margin: 1em auto;
+.menu-section {
 
+    background-color: $drop-white;
+    height:100vh;
+    background-image: url(../../assets/images/drop-background.png);
+    background-size: contain;
+    background-repeat: repeat;
 
+    &__items {
+
+        &-cards {
+            @include commonFlex(space-between, row, wrap);
+            margin: 1em auto;
+
+        }
+    }
 }
+
 .menu-card {
 
     @include commonFlex(space-between, row, wrap);
     align-items: center;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     border-radius: 15px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
@@ -20,7 +32,7 @@
 
     &__item {
         color: $drop-green;
-        @include soraMed;
+        @include soraBold;
     }
 
     &__price {
@@ -31,6 +43,8 @@
     &__add-on {
 
         &-label {
+            @include soraBold;
+            color: $drop-green;
             margin-right: 10px;
 
         }
@@ -50,7 +64,8 @@
 
         &-label {
             margin-right: 10px;
-            @include soraMed;
+            @include soraBold;
+            color: $drop-green;
 
 
         }

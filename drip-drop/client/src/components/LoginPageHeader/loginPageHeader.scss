@@ -5,23 +5,25 @@
 
     &__nav {
         @include commonFlex(space-between, row, wrap);
-        background-color: $drop-peach;
+        background-color: $drop-grey;
         height: 80px;
         width: 100%;
         align-items: center;
+
         &-header {
-    
             margin: 0;
+            margin-left: 6%;
         }
     
-        &-logo {
+
+        &-text {
+            @include soraBold;
             margin: 0;
-            height: 80px;
-            margin-left: 10px;
+            color: $drop-green;
+            width:100%;
         }
     
         &-buttons {
-            // width: 40%;
             @include commonFlex(space-between, row, wrap);
             margin-right: 10px;
     
@@ -29,7 +31,7 @@
                 width: 10em;
                 border: none;
                 height: 48px;
-                border-radius: 32px;
+                border-radius: 15px;
                 color: $drop-white;
                 background-color: $drop-green;
                 margin-left: 15px;
@@ -39,7 +41,7 @@
                 width: 10em;
                 border: none;
                 height: 48px;
-                border-radius: 32px;
+                border-radius: 15px;
                 color: $drop-white;
                 background-color: $drop-green;
                 margin-left: 15px;

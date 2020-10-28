@@ -3,10 +3,8 @@ import {stripeProvide, Elements, CardElement, useStripe, useElements} from '@str
 import {loadStripe} from '@stripe/stripe-js';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import {itemQuantity, deleteItem} from '../../actions/itemQuantity';
 import {getCoordinates} from '../../actions/getCoordinates';
-import {getCafe} from '../../actions/getCafe';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import Map from '../Map/Map';
 import CheckoutPageHeader from '../../components/CheckoutPageHeader/CheckoutPageHeader';
@@ -63,6 +61,7 @@ function CartPage({cartProps, coordinateProps, getCoordinates, selectedCafeProps
         }
         return (
             <form className="cart-form" onSubmit={submitHandler}>
+                <h2 className="cart-form__header">Enter Card Details</h2>
                 <CardElement className="cart-form__element"/>
                 <button className="cart-form__button" type="submit" disabled={!stripe}>Pay Now</button>
             </form>
@@ -116,19 +115,10 @@ function CartPage({cartProps, coordinateProps, getCoordinates, selectedCafeProps
                 <div className="cart-section__header">
                     <h1 className="cart-section__header-text">Your Coffee Cart</h1>
                 </div>
-
-                <div className="cart-section__table">
-                    <p className="cart-section__table-header">Item</p>
-                    <p className="cart-section__table-header">Price</p>
-                    <p className="cart-section__table-header">Qty.</p>
-                    <p className="cart-section__table-header">Increase/Decrease</p>
-                    <p className="cart-section__table-header">Remove Item</p>
-                </div>
              
-
-                <div>
+               <div className="cart-section__items">
                     {itemsInCart}
-                    <p>Total: ${cartProps.cartCost.toFixed(2)}</p>
+                    <p className="cart-section__items-total">Total: ${cartProps.cartCost.toFixed(2)}</p>
                 </div>
 
                 <Checkout paymentReceived={() => {setPaymentStatus('Payment Received')}}/>

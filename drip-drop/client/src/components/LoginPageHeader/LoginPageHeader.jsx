@@ -9,7 +9,7 @@ function LoginPageHeader(props) {
         <header className='login-header'>
             <nav className="login-header__nav">
                 <div className="login-header__nav-header">
-                <img className="login-header__nav-logo" src={PageLogo}/>
+                    <h2 className="login-header__nav-text"> Drip Drop</h2>
                 </div>
 
                 <div className="login-header__nav-buttons">

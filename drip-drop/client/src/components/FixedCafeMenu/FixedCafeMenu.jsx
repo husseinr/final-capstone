@@ -2,7 +2,6 @@ import React, {useState, useEffect, } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {addCart} from '../../actions/addAction';
-import CartPage from '../CartPage/CartPage';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import './fixedCafeMenu.scss';
@@ -48,7 +47,7 @@ function CafeMenu(props) {
                 </div>
 
                 <div className="menu-card__additionals">
-                    <label className="menu-card__additionals-label">Additional</label>
+                    <label className="menu-card__additionals-label">Add</label>
                     <select className="menu-card__additionals-select">
                         <option className="menu-card__additionals-select-option">Please Select</option>
                         <option className="menu-card__additionals-select-option" value="oat milk">Splash of Oat Milk</option>
@@ -66,7 +65,6 @@ function CafeMenu(props) {
         <section className="menu-section">
             <div className="menu-section__items">
                 <div className="menu-section__items-cards">{menuItems}</div>
-                {/* <div className="menu-section__items-cart">Items in Cart</div> */}
             </div>
         </section>
         </>

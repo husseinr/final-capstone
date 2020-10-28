@@ -8,7 +8,7 @@ let initialState = {
         "dripCoffee": {
             item: "dripCoffee",
             displayedItem: "drip coffee",
-            price: 2.99,
+            price: 3.99,
             cream: 0,
             sugar: 0,
             qty: 0,
@@ -19,7 +19,7 @@ let initialState = {
         "latte": {
             item: "latte",
             displayedItem: "latte",
-            price: 2.99,
+            price: 5.29,
             cream: 0,
             sugar: 0,
             qty: 0,
@@ -30,7 +30,7 @@ let initialState = {
         "cappucino": {
             item: "cappucino",
             displayedItem: "cappucino",
-            price: 2.99,
+            price: 4.79,
             cream: 0,
             sugar: 0,
             qty: 0,
@@ -41,7 +41,7 @@ let initialState = {
         "coldBrew": {
             item: "coldBrew",
             displayedItem: "cold brew",
-            price: 2.99,
+            price: 5.59,
             cream: 0,
             sugar: 0,
             qty: 0,
@@ -49,14 +49,59 @@ let initialState = {
             inCart: false
         },
 
+
         "espresso": {
             item: "espresso",
             displayedItem: "espresso",
-            price: 2.99,
+            price: 4.99,
             cream: 0,
             sugar: 0,
             qty: 0,
             id: "0505",
+            inCart: false
+        },
+
+        "matchaLatte": {
+            item: "matcha latte",
+            displayedItem: "matcha latte",
+            price: 5.59,
+            cream: 0,
+            sugar: 0,
+            qty: 0,
+            id: "0506",
+            inCart: false
+        },
+
+        "chaiLatte": {
+            item: "chai latte",
+            displayedItem: "chai latte",
+            price: 5.59,
+            cream: 0,
+            sugar: 0,
+            qty: 0,
+            id: "0507",
+            inCart: false
+        },
+
+        "icedCoffee": {
+            item: "iced coffee",
+            displayedItem: "iced coffee",
+            price: 5.59,
+            cream: 0,
+            sugar: 0,
+            qty: 0,
+            id: "0508",
+            inCart: false
+        },
+
+        "pumpkinSpiceLatte": {
+            item: "pumpkinSpiceLatte",
+            displayedItem: "pumpkin spice latte",
+            price: 5.59,
+            cream: 0,
+            sugar: 0,
+            qty: 0,
+            id: "0509",
             inCart: false
         },
     },

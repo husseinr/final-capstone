@@ -1,27 +1,32 @@
 @import '../../styles/partials/common-styles';
 
-.hero {
-    width: 100%;
-    @include commonFlex(space-between,row,wrap);
-    justify-content: flex-start;
-    align-content: center;
-    background-image: url(../../assets/images/main-hero.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 53vw;
+.home-main {
 
-    &__description {
-        width:25%;
-        margin-left: 10%;
+    &__hero {
+        width: 100%;
+        @include commonFlex(space-between,row,wrap);
+        justify-content: flex-start;
+        align-content: center;
+        background-image: url(../../assets/images/main-hero.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 90vh;
 
-        &-header {
-            color: $drop-green;
-            font-size: 4rem;
-        }
-
-        &-explained {
-            color: $drop-green;
-            line-height: $paragraph-line-height;
+        &-description {
+            width:25%;
+            margin-left: 7%;
+    
+            &-name {
+                color: $drop-green;
+                font-size: 4rem;
+            }
+    
+            &-explained {
+                @include soraReg;
+                color: $drop-green;
+                font-size: 1.5rem;
+                line-height: $header2-line-height;
+            }
         }
     }
 }

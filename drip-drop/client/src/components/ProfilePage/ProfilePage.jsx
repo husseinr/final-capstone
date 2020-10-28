@@ -2,8 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import firebase from '../../firebase';
 import PlacesNearMe from '../PlacesNearMe/PlacesNearMe';
-import CartPage from '../CartPage/CartPage';
-import FixedCafeMenu from '../FixedCafeMenu/FixedCafeMenu';
 import './profilePage.scss';
 import PageHeader from '../PageHeader/PageHeader';
 

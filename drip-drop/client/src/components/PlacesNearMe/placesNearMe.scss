@@ -2,6 +2,33 @@
 .location-section {
 
     &__search {
+        background-image: url(../../assets/images/main-hero.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+
+        &-message {
+            position: absolute;
+            @include commonFlex(space-around,column,wrap);
+            align-content: center;
+            width: 50%;
+            bottom: 450px;
+            right: 0;
+            left: 0;
+
+            &-slogan {
+                @include soraBold;
+                color: $drop-green;
+                font-size: 3rem;
+
+
+            }
+
+            &-action {
+                @include soraBold;
+                color: $drop-green;
+            }
+        }
 
         &-input {
             padding-top: 3em;
@@ -9,28 +36,40 @@
 
 
             &-field {
-                margin-top: 10em;
-                margin-left: 4em;
+                margin: 0 5em;
+                margin-top: 12em;
                 width: 25%;
 
                 &-bar {
+                    @include soraMed;
+                    background-image: url(../../assets/logos/location-outline.svg);
+                    background-repeat: no-repeat;
+                    background-size: 20px;
+                    background-position: left;
                     width: 100%;
-                    height: 50px;
+                    height: 60px;
                     background-color: $drop-white;
                     border: none;
-                    padding: 0 16px;
+                    padding: 0 2em;
                     border-radius: 15px;
-                    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+                    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+                    outline: none;
                 }
             }
             
             &-suggestions {
 
                 &-loading {
+                    margin: 0 5em;
+                    width: 25%;
 
                 }
 
                 &-results {
+                    @include soraReg;
+                    color: $drop-green;
+                    margin: 0 5em;
+                    width: 25%;
 
                 }
             }
@@ -39,5 +78,7 @@
 
     &__cards {
         @include commonFlex(space-between, row, wrap);
+        background-color: $drop-white;
+        padding: 0 4%;
     }
 }

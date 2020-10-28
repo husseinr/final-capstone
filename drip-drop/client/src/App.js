@@ -37,35 +37,3 @@ export default function App() {
         </div>
     ) : <h2>Loading... </h2>
 }
-
-// import React, {useState, useEffect} from 'react';
-// import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
-// import firebase from '../../firebase';
-// import UpdatedLogin from '../UpdatedLogin/UpdatedLogin';
-// import Register from '../Register/Register';
-// import UpdatedHomePage from '../UpdatedHomePage/UpdatedHomePage';
-// import Profile from '../ProfilePage/ProfilePage';
-
-// export default function UpdatedAppJS() {
-
-//     const [firebaseIntialized, setFirebaseIntialized] = useState(false)
-
-//     useEffect(() => {
-//         firebase.initialized().then(value => {
-//             setFirebaseIntialized(value)
-//         })
-//     })
-//     return firebaseIntialized !== false ? (
-//         <div>
-//             <BrowserRouter>
-//                 <Switch>
-//                     <Route exact path="/" component={UpdatedHomePage}/>
-//                     <Route exact path="/login" component={UpdatedLogin}/>
-//                     <Route exact path="/register" component={Register}/>
-//                     <Route exact path="/profile" component={Profile}/>
-//                 </Switch>
-//             </BrowserRouter>
-            
-//         </div>
-//     ) : <h2>Loading... </h2>
-// }

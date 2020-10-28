@@ -1,8 +1,20 @@
 [
+    {
+        "item": "latte",
+        "displayedItem": "latte",
+        "price": 5.29,
+        "cream": 0,
+        "sugar": 0,
+        "qty": 0,
+        "id": "0502",
+        "inCart": false,
+        "image":"/assets/images/coffee-latte.svg"
+            },
+    
     { 
         "item": "dripCoffee",
         "displayedItem": "drip coffee",
-        "price": 2.99,
+        "price": 3.99,
         "cream": 0,
         "sugar": 0,
         "qty": 0,
@@ -12,21 +24,9 @@
         },
 
     {
-    "item": "latte",
-    "displayedItem": "latte",
-    "price": 2.99,
-    "cream": 0,
-    "sugar": 0,
-    "qty": 0,
-    "id": "0502",
-    "inCart": false,
-    "image":"/assets/images/coffee-latte.svg"
-        },
-
-    {
     "item": "cappucino",
     "displayedItem": "cappucino",
-    "price": 2.99,
+    "price": 4.79,
     "cream": 0,
     "sugar": 0,
     "qty": 0,
@@ -38,7 +38,7 @@
     {
     "item": "coldBrew",
     "displayedItem": "cold brew",
-    "price": 2.99,
+    "price": 5.59,
     "cream": 0,
     "sugar": 0,
     "qty": 0,
@@ -50,12 +50,59 @@
     {
     "item": "espresso",
     "displayedItem": "espresso",
-    "price": 2.99,
+    "price": 4.99,
     "cream": 0,
     "sugar": 0,
     "qty": 0,
     "id": "0505",
     "inCart": false,
     "image":"/assets/images/espresso.svg"
-        }
+        },
+
+    {
+    "item": "matchaLatte",
+    "displayedItem": "matcha latte",
+    "price": 5.59,
+    "cream": 0,
+    "sugar": 0,
+    "qty": 0,
+    "id": "0506",
+    "inCart": false,
+    "image":"/assets/images/coffee-latte.svg"
+        },
+
+    {
+    "item": "chaiLatte",
+    "displayedItem": "chai latte",
+    "price": 5.59,
+    "cream": 0,
+    "sugar": 0,
+    "qty": 0,
+    "id": "0507",
+    "inCart": false,
+    "image":"/assets/images/coffee-latte.svg"
+        },
+
+    {
+    "item": "icedCoffee",
+    "displayedItem": "iced coffee",
+    "price": 5.59,
+    "cream": 0,
+    "sugar": 0,
+    "qty": 0,
+    "id": "0508",
+    "inCart": false,
+    "image":"/assets/images/iced-coffee.svg"
+        },
+    {
+    "item": "pumpkinSpiceLatte",
+    "displayedItem": "pumpkin spice latte",
+    "price": 5.59,
+    "cream": 0,
+    "sugar": 0,
+    "qty": 0,
+    "id": "0509",
+    "inCart": false,
+    "image":"/assets/images/coffee-latte.svg"
+    }
 ]

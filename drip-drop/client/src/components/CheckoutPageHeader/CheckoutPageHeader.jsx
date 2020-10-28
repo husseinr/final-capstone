@@ -9,7 +9,7 @@ export default function CheckoutPageHeader() {
         <header className="cart-header">
             <nav className="cart-header__nav">
                 <div className="cart-header__nav-logo">
-                    <img className="cart-header__nav-logo-image" src={PageLogo}/>
+                    <Link to="/profile"><h2 className="cart-header__nav-logo-text">Drip Drop</h2></Link>
                 </div>
 
                 <div className="cart-header__nav-option" >

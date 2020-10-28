@@ -3,16 +3,18 @@
 .cart-item {
 
     @include commonFlex(space-around, row, wrap);
-    background-color: $drop-peach;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-    margin-bottom: 10px;
-    width: 80%;
-    margin: 10px auto;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+    background-color: $drop-grey;
+    margin-bottom: 1em;
+    padding: 10px 10px;
 
     &__text {
         @include soraMed;
         color: $drop-green;
-
     }
 
     &__item {
@@ -42,12 +44,19 @@
 }
 
 .cart-section {
+    background-color: $drop-white;
+    height:100vh;
+    background-image: url(../../assets/images/drop-background.png);
+    background-size: contain;
+    background-repeat: repeat;
 
     &__header {
 
         &-text {
             @include soraBold;
+            font-size: 2rem;
             color: $drop-green;
+            margin-left: 6%;
 
 
         }
@@ -64,6 +73,22 @@
 
         }
     }
+
+    &__items {
+
+        &-total {
+            @include soraMed;
+            color: $drop-white;
+            width: 10%;
+            margin: 1em auto;
+            background-color: $drop-green;
+            text-align: center;
+            height: 1.5em;
+            border-radius: 10px;
+            padding: 15px 0;
+            
+        }
+    }
 }
 
 .cart-form {
@@ -71,20 +96,33 @@
     padding: 10px 10px;
     width: 25%;
     margin: 10px auto;
-    height: 10em;
+    height: 7em;
     border-radius: 15px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-    background-color: $drop-peach;
+    background-color: $drop-grey;
+
+    &__header {
+        @include soraBold;
+        font-size: 1rem;
+        color: $drop-green;
+        text-align: center;
+    }
 
     &__element {
         background-color: $drop-grey;
         border-radius: 15px;
+        padding: 10px 5px;
+        height: 1em;
+        width: 80%;
+        margin-left: 10%;
     }
 
     &__button {
+        @include soraMed;
+        font-size: 1rem;
         margin: 0 auto;
         width: 25%;
-        border-radius: 15px;
+        border-radius: 10px;
         border: none;
         background-color: $drop-green;
         color: $drop-white;
@@ -123,8 +161,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
-
-    // background-color: $drop-grey;
 
     &__map {
         margin-left: 100px;
