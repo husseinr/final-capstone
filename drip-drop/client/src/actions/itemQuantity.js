@@ -4,9 +4,6 @@ export const itemQuantity = (action, item) => {
 
     return (dispatch) => {
 
-        console.log('itemQuantity');
-        console.log("action", action);
-        console.log("item", item)
 
         dispatch({
            type: action === "increase" ? INCREASE_QUANTITY : DECREASE_QUANTITY,
@@ -20,8 +17,7 @@ export const deleteItem = (action, item) => {
 
     return (dispatch) => {
 
-        console.log('deleteItem');
-        console.log('deleting', item);
+
 
         dispatch({
            type: DELETE_ITEM,
@@ -35,9 +31,6 @@ export const sugarQuantity = (action, item) => {
 
     return (dispatch) => {
 
-        console.log('itemQuantity');
-        console.log("action", action);
-        console.log("item", item)
 
         dispatch({
            type: action === "increase" ? INCREASE_SUGAR : DECREASE_SUGAR,

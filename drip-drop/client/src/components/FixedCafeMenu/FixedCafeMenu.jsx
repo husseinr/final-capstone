@@ -2,12 +2,11 @@ import React, {useState, useEffect, } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {addCart} from '../../actions/addAction';
-import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
+import { useParams,} from 'react-router-dom';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import './fixedCafeMenu.scss';
 
 function CafeMenu(props) {
-    console.log(props)
 
     let [menu, setMenu] = useState([]);
     const { city, cafe } = useParams();

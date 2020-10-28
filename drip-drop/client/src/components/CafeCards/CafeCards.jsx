@@ -38,7 +38,6 @@ function CafeCards(props) {
         let usersCafeChoice = props.getCafe;
 
         let cafeBackground = imageURL + props.photoRef + key
-        console.log(cafeBackground);
 
         let usersChoice = [props.name, props.address]
         

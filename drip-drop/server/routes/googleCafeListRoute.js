@@ -43,7 +43,6 @@ const radius = 5 * 1000;
 
     places.push(place);
     res.send(response.data.results)
-    console.log(url)
   })
   .catch(error => { 
     console.log(error);

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, } from 'react';
+import React, {useState } from 'react';
 import {stripeProvide, Elements, CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
 import {connect} from 'react-redux';
@@ -14,7 +14,7 @@ import './cartPage.scss';
 function CartPage({cartProps, coordinateProps, getCoordinates, selectedCafeProps, itemQuantity, deleteItem}) {
     const stripePromise = loadStripe("pk_test_51Hfv8NExWXMrozUbXJA8P6T4RvVqoWKEol2mEsigT2bFSWANUA4Grtx7HG2ybOIi2bjqslmS1IAG2CwJApJ0NLhw000m3PsCk8")
 
-    console.log(cartProps)
+
     let itemsInCart = [];
     const [paymentStatus, setPaymentStatus] = useState('')
 
@@ -25,13 +25,12 @@ function CartPage({cartProps, coordinateProps, getCoordinates, selectedCafeProps
 
 
     Object.keys(cartProps.products).forEach( function(item) {
-        console.log(item)
-        console.log(cartProps.products[item].inCart);
+    
         if(cartProps.products[item].inCart) {
             itemsInCart.push(cartProps.products[item])
         }
 
-        console.log(itemsInCart)
+       
     });
 
     const Checkout = ({paymentReceived}) => {

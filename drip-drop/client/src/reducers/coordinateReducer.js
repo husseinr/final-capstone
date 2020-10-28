@@ -12,7 +12,6 @@ export default (state = initialState, action) => {
     switch(action.type) {
         case GET_COORDINATES:
             newCoordinates = action.payload
-            console.log('setting coordinates');
             return {
             lat:action.payload[0],
             lng:action.payload[1]
