@@ -1,0 +1,132 @@
+@import '../../styles/partials/common-styles';
+
+.cart-item {
+
+    @include commonFlex(space-around, row, wrap);
+    background-color: $drop-peach;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    margin-bottom: 10px;
+    width: 80%;
+    margin: 10px auto;
+
+    &__text {
+        @include soraMed;
+        color: $drop-green;
+
+    }
+
+    &__item {
+
+
+    }
+
+    &__price {
+
+        
+    }
+
+    &__qty {
+
+
+    }
+
+    &__arrow-icons {
+
+
+    }
+
+    &__trash-icon {
+
+
+    }
+}
+
+.cart-section {
+
+    &__header {
+
+        &-text {
+            @include soraBold;
+            color: $drop-green;
+
+
+        }
+    }
+
+    &__table {
+        @include commonFlex(space-between, row, wrap);
+        width: 70%;
+        margin: 10px auto;
+
+        &-header {
+            @include soraBold;
+            color: $drop-green;
+
+        }
+    }
+}
+
+.cart-form {
+    @include commonFlex(space-between, column, wrap);
+    padding: 10px 10px;
+    width: 25%;
+    margin: 10px auto;
+    height: 10em;
+    border-radius: 15px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    background-color: $drop-peach;
+
+    &__element {
+        background-color: $drop-grey;
+        border-radius: 15px;
+    }
+
+    &__button {
+        margin: 0 auto;
+        width: 25%;
+        border-radius: 15px;
+        border: none;
+        background-color: $drop-green;
+        color: $drop-white;
+    }
+}
+
+.checkout-message {
+    margin: 3em 12em;
+    position: absolute;
+    width: 50%;
+    &__header {
+        font-size: 2em;
+        margin: 0;
+        @include soraBold;
+        color: $drop-green;
+    }
+
+    &__location {
+        @include soraMed;
+        color: $drop-green;
+    }
+
+    &__span {
+        @include soraBold;
+        color: $drop-black;
+    }
+}
+
+.checkout-section {
+    margin: 0;
+    position: absolute;
+    z-index: -1;
+    top: 80;
+    width: 100%;
+    background-image: url(../../assets/images/checkout-hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+
+    // background-color: $drop-grey;
+
+    &__map {
+        margin-left: 100px;
+    }
+}

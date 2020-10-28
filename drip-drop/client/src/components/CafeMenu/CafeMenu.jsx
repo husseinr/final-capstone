@@ -8,7 +8,6 @@ function CafeMenu() {
     let [menu, setMenu] = useState([]);
     const { city, cafe } = useParams();
     let [cart, setCart] = useState([]);
-    let [alert, setAlert] = useState('Added multiple');
     let [cartTotal, setCartTotal] = useState(0);
 
 

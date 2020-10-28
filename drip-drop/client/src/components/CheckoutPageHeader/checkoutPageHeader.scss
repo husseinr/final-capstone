@@ -3,6 +3,7 @@
 .cart-header {
     width: 100%;
     @include commonFlex(space-between, row, wrap);
+    margin: 0;
 
     &__nav {
         @include commonFlex(space-between, row, wrap);
@@ -26,10 +27,11 @@
             margin-right: 10px;
 
             &-button {
+                @include soraBold;
                 width: 10em;
                 border: none;
                 height: 48px;
-                border-radius: 32px;
+                border-radius: 15px;
                 color: $drop-white;
                 background-color: $drop-green;
                 margin-left: 15px;

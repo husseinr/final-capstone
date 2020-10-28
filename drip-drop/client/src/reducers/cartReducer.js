@@ -1,12 +1,13 @@
-import {ADD_PRODUCT_CART, GET_QTY_CART, INCREASE_QUANTITY, DECREASE_QUANTITY, DELETE_ITEM} from '../actions/types';
+import {ADD_PRODUCT_CART, GET_QTY_CART, INCREASE_QUANTITY, DECREASE_QUANTITY, DELETE_ITEM, INCREASE_SUGAR, DECREASE_SUGAR} from '../actions/types';
 
 let initialState = {
     cartQty: 0,
     cartCost: 0,
     products: {
 
-        dripCoffee: {
+        "dripCoffee": {
             item: "dripCoffee",
+            displayedItem: "drip coffee",
             price: 2.99,
             cream: 0,
             sugar: 0,
@@ -15,8 +16,9 @@ let initialState = {
             inCart: false
         },
 
-        latte: {
+        "latte": {
             item: "latte",
+            displayedItem: "latte",
             price: 2.99,
             cream: 0,
             sugar: 0,
@@ -25,8 +27,9 @@ let initialState = {
             inCart: false
         },
 
-        cappucino: {
+        "cappucino": {
             item: "cappucino",
+            displayedItem: "cappucino",
             price: 2.99,
             cream: 0,
             sugar: 0,
@@ -35,8 +38,9 @@ let initialState = {
             inCart: false
         },
 
-        coldBrew: {
+        "coldBrew": {
             item: "coldBrew",
+            displayedItem: "cold brew",
             price: 2.99,
             cream: 0,
             sugar: 0,
@@ -45,8 +49,9 @@ let initialState = {
             inCart: false
         },
 
-        espresso: {
+        "espresso": {
             item: "espresso",
+            displayedItem: "espresso",
             price: 2.99,
             cream: 0,
             sugar: 0,
@@ -54,7 +59,6 @@ let initialState = {
             id: "0505",
             inCart: false
         },
-
     },
 }
 
@@ -133,6 +137,17 @@ export default (state = initialState, action) => {
                             [action.payload]: selectedItem
                         }
                     }
+
+                    case INCREASE_SUGAR:
+                        selectedItem = {...state.products[action.payload]}
+                        selectedItem.sugar += 1;
+                        return {
+                            ...state,
+                            products: {
+                                ...state.products,
+                                [action.payload]: selectedItem
+                            }
+                        }
 
             default:
                 return state;

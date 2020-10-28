@@ -1,4 +1,4 @@
-import {INCREASE_QUANTITY, DECREASE_QUANTITY, DELETE_ITEM} from './types';
+import {INCREASE_QUANTITY, DECREASE_QUANTITY, DELETE_ITEM, INCREASE_SUGAR, INCREASE_CREAM, DECREASE_SUGAR} from './types';
 
 export const itemQuantity = (action, item) => {
 
@@ -25,6 +25,22 @@ export const deleteItem = (action, item) => {
 
         dispatch({
            type: DELETE_ITEM,
+           payload: item
+        })
+
+    }
+}
+
+export const sugarQuantity = (action, item) => {
+
+    return (dispatch) => {
+
+        console.log('itemQuantity');
+        console.log("action", action);
+        console.log("item", item)
+
+        dispatch({
+           type: action === "increase" ? INCREASE_SUGAR : DECREASE_SUGAR,
            payload: item
         })
 

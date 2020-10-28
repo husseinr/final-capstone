@@ -1,26 +1,81 @@
 @import '../../styles/partials/common-styles';
+.menu-section__items-cards {
 
+    @include commonFlex(space-between, row, wrap);
+    margin: 1em auto;
+
+
+}
 .menu-card {
 
-    @include commonFlex(space-between, column, wrap);
+    @include commonFlex(space-between, row, wrap);
+    align-items: center;
     width: 50%;
     margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    background-color: $drop-grey;
+    margin-bottom: 1em;
+    padding: 10px 10px;
 
     &__item {
-
-        @include soraReg;
+        color: $drop-green;
+        @include soraMed;
     }
 
     &__price {
-
+        color: $drop-green;
         @include soraBold;
+    }
+
+    &__add-on {
+
+        &-label {
+            margin-right: 10px;
+
+        }
+
+        &-input {
+            border: none;
+            width: 1.5em;
+            padding-left: 16px;
+            background-color: $drop-grey;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+
+        }
+
+    }
+
+    &__additionals {
+
+        &-label {
+            margin-right: 10px;
+            @include soraMed;
 
 
+        }
+
+        &-select {
+
+            border: none;
+            background-color: $drop-grey;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+            @include soraReg;
+
+            &-option {
+                @include soraReg;
+            }
+        }
     }
 
     &__submit {
 
         @include soraMed;
+        color: $drop-white;
+        width: 5em;
+        border-radius: 10px;
+        border: none;
+        background-color: $drop-green;
 
 
     }
@@ -28,7 +83,6 @@
     &__image {
         height: 100px;
         border-radius: 15px;
-        box-shadow: 2px 3px #888888;
         width: 50px;
         
     }

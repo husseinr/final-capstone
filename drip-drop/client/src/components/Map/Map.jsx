@@ -1,7 +1,8 @@
 import React, {useState, useEffect, } from 'react';
 import {connect} from 'react-redux';
 import {getCoordinates} from '../../actions/getCoordinates';
-import { GoogleMap, LoadScript, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import {getCafe} from '../../actions/getCafe';
+import { GoogleMap, LoadScript, useLoadScript, Marker, InfoWindow, DirectionsRenderer, DirectionsService } from '@react-google-maps/api';
 import mapStyle from'./mapStyle';
 import './map.scss'
 
@@ -12,10 +13,13 @@ const mapContainerStyle = {
     height:'300px',
 }
 
+
 const center = {
     lat: coordinateProps.lat,
     lng: coordinateProps.lng,
   };
+
+
 
   const options = {
       styles: mapStyle,
@@ -30,8 +34,8 @@ const {isLoaded, loadError} = useLoadScript({
     if (!isLoaded) return "Loading Map"
     return (
         <div className="map">
-            <h2>Drip Drop</h2>
-            <GoogleMap 
+            <GoogleMap
+            className="map__render"
             mapContainerStyle={mapContainerStyle} 
             zoom={15} 
             center={center} 
@@ -43,7 +47,7 @@ const {isLoaded, loadError} = useLoadScript({
 }
 
 const mapStateToProps = state => ({
-    coordinateProps: state.coordinateState
+    coordinateProps: state.coordinateState,
 });
 
 export default connect(mapStateToProps, {getCoordinates})(Map)

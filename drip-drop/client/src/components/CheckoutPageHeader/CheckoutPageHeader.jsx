@@ -13,7 +13,7 @@ export default function CheckoutPageHeader() {
                 </div>
 
                 <div className="cart-header__nav-option" >
-                    <Link to="/profile"><button className="cart-header__nav-option-button" type="submit">Return Home</button></Link>
+                    <Link to="/profile"><button className="cart-header__nav-option-button" type="submit" >Home</button></Link>
                 </div>
             </nav>
         </header>

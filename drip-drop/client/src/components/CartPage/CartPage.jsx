@@ -6,12 +6,14 @@ import axios from 'axios';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import {itemQuantity, deleteItem} from '../../actions/itemQuantity';
 import {getCoordinates} from '../../actions/getCoordinates';
+import {getCafe} from '../../actions/getCafe';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import Map from '../Map/Map';
 import CheckoutPageHeader from '../../components/CheckoutPageHeader/CheckoutPageHeader';
+import './cartPage.scss';
 
 
-function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, deleteItem}) {
+function CartPage({cartProps, coordinateProps, getCoordinates, selectedCafeProps, itemQuantity, deleteItem}) {
     const stripePromise = loadStripe("pk_test_51Hfv8NExWXMrozUbXJA8P6T4RvVqoWKEol2mEsigT2bFSWANUA4Grtx7HG2ybOIi2bjqslmS1IAG2CwJApJ0NLhw000m3PsCk8")
 
     console.log(cartProps)
@@ -60,9 +62,9 @@ function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, del
             }
         }
         return (
-            <form onSubmit={submitHandler}>
-                <CardElement/>
-                <button type="submit" disabled={!stripe}>Pay Now</button>
+            <form className="cart-form" onSubmit={submitHandler}>
+                <CardElement className="cart-form__element"/>
+                <button className="cart-form__button" type="submit" disabled={!stripe}>Pay Now</button>
             </form>
         )
  
@@ -72,29 +74,37 @@ function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, del
 
     itemsInCart = itemsInCart.map( (item, index) => {
         return (
-           <div>
-               <div key={item.id}>
-                    <p>{item.item}</p>
-                    <p>{item.price}</p>
-                    <p>{item.qty}</p>
+           <div  key={item.id} className="cart-item">
+                <p className="cart-item__item cart-item__text">{item.displayedItem}</p>
+                <p className="cart-item__price cart-item__text">${item.price}</p>
+                <p className="cart-item__qty cart-item__text">{item.qty}</p>
+                <div className="cart-item__arrow-icons">
                     <ion-icon onClick={() => itemQuantity('increase', item.item)} name="chevron-up-circle-outline"></ion-icon>
                     <ion-icon onClick={() => itemQuantity('decrease', item.item)} name="chevron-down-circle-outline"></ion-icon>
+                </div>
+                <div className="cart-item__trash-icon">
                     <ion-icon onClick={() => deleteItem('delete', item.item)} name="trash-outline"></ion-icon>
-               </div>
-
+                </div>
+               
            </div>
         )
     })
 
     if (paymentStatus === "Payment Received") {
         return (
-        <>
-            <CheckoutPageHeader />
-            <p>Enjoy your Brew!</p>
-            <Map center={center}
-            lat={coordinateProps.lat}
-            lng={coordinateProps.lng}/>
-        </>
+            <>
+                <CheckoutPageHeader />
+                <div className="checkout-message">
+                        <h2 className="checkout-message__header">Order placed, enjoy your drip!</h2>
+                        <p className="checkout-message__location">Ready to be picked up at <span className="checkout-message__span">{selectedCafeProps.cafe}, {selectedCafeProps.address}</span></p>
+                </div>
+                <section className="checkout-section">
+                    <Map className="checkout-section__map"
+                     center={center}
+                    lat={coordinateProps.lat}
+                    lng={coordinateProps.lng}/>
+                </section>
+            </>
         )
     }
 
@@ -102,18 +112,29 @@ function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, del
 
         <Elements stripe={stripePromise}>
             <PageHeader/>
-            <div>
-                <h1>Cart Page</h1>
+            <section className="cart-section">
+                <div className="cart-section__header">
+                    <h1 className="cart-section__header-text">Your Coffee Cart</h1>
+                </div>
+
+                <div className="cart-section__table">
+                    <p className="cart-section__table-header">Item</p>
+                    <p className="cart-section__table-header">Price</p>
+                    <p className="cart-section__table-header">Qty.</p>
+                    <p className="cart-section__table-header">Increase/Decrease</p>
+                    <p className="cart-section__table-header">Remove Item</p>
+                </div>
+             
 
                 <div>
                     {itemsInCart}
-                    <p>${cartProps.cartCost.toFixed(2)}</p>
+                    <p>Total: ${cartProps.cartCost.toFixed(2)}</p>
                 </div>
 
                 <Checkout paymentReceived={() => {setPaymentStatus('Payment Received')}}/>
 
                 
-            </div>
+            </section>
         </Elements>
  
     )
@@ -121,7 +142,9 @@ function CartPage({cartProps, coordinateProps, getCoordinates, itemQuantity, del
 
 const mapStateToProps = state => ({
     cartProps: state.cartState,
-    coordinateProps: state.coordinateState
+    coordinateProps: state.coordinateState,
+    selectedCafeProps: state.usersCafeState,
+
 });
 
 export default connect(mapStateToProps, {itemQuantity, deleteItem, getCoordinates})(CartPage)

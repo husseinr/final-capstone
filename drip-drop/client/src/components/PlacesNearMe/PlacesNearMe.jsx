@@ -3,13 +3,14 @@ import axios from 'axios';
 import { useDispatch, Provider } from "react-redux";
 import {connect} from 'react-redux';
 import {getCoordinates} from '../../actions/getCoordinates';
+import {getCafe} from '../../actions/getCafe';
 import {Route, Switch, Link, useParams, useRouteMatch} from 'react-router-dom';
 import PlacesAutoComplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 import CafeCards from '../CafeCards/CafeCards';
 import Map from '../Map/Map'
 import './placesNearMe.scss';
 
-function PlacesNearMe(props,) {
+function PlacesNearMe(props) {
     const [cafes, setCafes] = useState([]);
     const [address, setAddress] = useState('');
     const [coordinates, setCoordinates] = useState({lat: null, lng: null});
@@ -63,6 +64,7 @@ function PlacesNearMe(props,) {
                     {filteredCafes && filteredCafes.map(cafe => {
                         return   <CafeCards
                         name={cafe.name}
+                        address={cafe.vicinity}
                         key={cafe.id}
                         image={cafe.icon}
                         lat2={cafe.geometry.location.lat}
@@ -70,7 +72,8 @@ function PlacesNearMe(props,) {
                         yourCoordinates={coordinates}
                         rating={cafe.rating}
                         photoRef={cafe.photos[0].photo_reference}
-                        getCoord={props.getCoordinates}/>
+                        getCoord={props.getCoordinates}
+                        getCafe={props.getCafe}/>
                     })}
                 </div>
         </section>
@@ -81,4 +84,4 @@ const mapStateToProps = state => ({
     coordinateProps: state.coordinateState
 });
 
-export default connect(mapStateToProps, {getCoordinates} )(PlacesNearMe)
+export default connect(mapStateToProps, {getCoordinates, getCafe} )(PlacesNearMe)

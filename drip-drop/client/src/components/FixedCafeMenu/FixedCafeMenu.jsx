@@ -12,8 +12,6 @@ function CafeMenu(props) {
 
     let [menu, setMenu] = useState([]);
     const { city, cafe } = useParams();
-    // let [cart, setCart] = useState([]);
-    let [alert, setAlert] = useState('Added multiple');
     let [cartTotal, setCartTotal] = useState(0);
 
 
@@ -34,100 +32,43 @@ function CafeMenu(props) {
 
      );
 
-    //  useEffect(() => {
-    //     total();
-    //   }, [cart]);
-
-    //  const addToCart = (item) => {
-    //     setCart([...cart, item]);
-    // }
-    // console.log(cart)
-
-    // const removeFromCart = (item) => {
-    //     let copy = [...cart]
-    //     copy = copy.filter((cartItem) => cartItem.id !== item.id)
-    //     setCart(copy)
-    // }
-
-    //  const menuItems = menu.map((item) => (
-    //      <div key={item.id}>
-    //         <div>
-    //              {`${item.item} : $${item.price}`}
-    //              <input type="submit" value="add" onClick={() => addToCart(item)} />
-    //         </div>
-    //      </div>
-    //  ));
-
-    // const cartItems = cart.map((item) => (
-    //     <div key={item.id}>
-    //       {`${item.item}: $${item.price}`}
-    //       <input type="submit" value="remove" onClick={() => removeFromCart(item)} />
-    //     </div>
-    //   ));
-
-    //   updates below
-
-    // let [basketQty, setBasketQty] = useState (0);
-
-    // const addToBasket = () => {
-    //     setBasketQty(basketQty + 1)
-    // }
-
       const menuItems = menu.map((item) => (
-        <div key={item.id}>
-           <div className="menu-card">
-               <p className="menu-card__item">{item.item}</p>
-               <p className="menu-card__price">${item.price}</p>
-                <input className="menu-card__submit" type="submit" value="add" onClick={() => props.addCart(item.item)} />
+           <div className="menu-card" key={item.id}>
                 <img className="menu-card__image" src={item.image} alt="drink-icon" ></img>
+                <p className="menu-card__item">{item.displayedItem}</p>
+                <p className="menu-card__price">${item.price}</p>
+                <div className="menu-card__add-on">
+                    <label className="menu-card__add-on-label">Sugar</label>
+                    <input className="menu-card__add-on-input" placeholder="0"></input>
+                </div>
+       
+                <div className="menu-card__add-on">
+                    <label className="menu-card__add-on-label">Cream</label>
+                    <input className="menu-card__add-on-input" placeholder="0"></input>
+                </div>
+
+                <div className="menu-card__additionals">
+                    <label className="menu-card__additionals-label">Additional</label>
+                    <select className="menu-card__additionals-select">
+                        <option className="menu-card__additionals-select-option">Please Select</option>
+                        <option className="menu-card__additionals-select-option" value="oat milk">Splash of Oat Milk</option>
+                        <option className="menu-card__additionals-select-option" value="almond milk">Splash of Almond Milk</option>
+                        <option className="menu-card__additionals-select-option" value="pumpkin spice">Pumpkin Spice</option>
+                    </select>
+                </div>
+                <button className="menu-card__submit" type="submit" value="add" onClick={() => props.addCart(item.item)}>Add</button>
            </div>
-        </div>
     ));
 
-//    const cartItems = basketQty.map((item) => (
-//        <div key={item.id}>
-//          {`${item.item}: $${item.price}`}
-         {/* <input type="submit" value="remove" onClick={() => removeFromCart(item)} /> */}
-       {/* </div>
-     )); */}
-
-  
-
-    //  const totalPrice = () => {
-    //      let addTotal = (accumulator, currentValue) => accumulator + currentValue;
-    //      let total = cart.addTotal;
-    //      setCartTotal(addTotal)
-
-    //  }
-
-    // const total = () => {
-    //     let totalVal = 0;
-    //     for (let i = 0; i < cart.length; i++) {
-    //       totalVal += cart[i].price;
-    //     }
-    //     setCartTotal(totalVal);
-    //   };
-
-
-
-    //   updates below
-
-
-
-
- 
-
-
-     
     return (
         <>
         <PageHeader/>
-        <div>
-            <div>
-                <div>{menuItems}</div>
-                <div>Items in Cart</div>
+        <section className="menu-section">
+            <div className="menu-section__items">
+                <div className="menu-section__items-cards">{menuItems}</div>
+                {/* <div className="menu-section__items-cart">Items in Cart</div> */}
             </div>
-        </div>
+        </section>
         </>
     )
 }

@@ -17,6 +17,7 @@ function CafeCards(props) {
             lng2
         ]
 
+
         const R = 6371e3;
         const φ1 = lat1 * Math.PI/180; 
         const φ2 = lat2 * Math.PI/180;
@@ -35,15 +36,22 @@ function CafeCards(props) {
 
         let setCafeMapCoord = props.getCoord;
 
-        // style={{backgroundImage: url(`${imageURL + props.photoRef + key}`)}
+        let usersCafeChoice = props.getCafe;
 
         let cafeBackground = imageURL + props.photoRef + key
-        console.log(cafeBackground)
+        console.log(cafeBackground);
+
+        let usersChoice = [props.name, props.address]
         
     return (
         <Link to='/menu'>
         <section className="content">
-            <div className="content__card" key={props.key} onClick={() => setCafeMapCoord(cartMapCoord,'update')} style={{ backgroundImage: `url(${cafeBackground})`, backgroundSize: "cover",}}>
+
+            <div className="content__card" key={props.key} onClick={() => 
+                {setCafeMapCoord(cartMapCoord,'update'); 
+                usersCafeChoice(usersChoice,'update')}} 
+                style={{ backgroundImage: `url(${cafeBackground})`, backgroundSize: "cover",}}>
+
                 <div className="content__card-rating">
                     <p className="content__card-rating-result content__card-items">{props.rating}<span><ion-icon name="star"></ion-icon></span></p>
                 </div>
@@ -64,7 +72,8 @@ function CafeCards(props) {
 }
 
 const mapStateToProps = state => ({
-    coordinateProps: state.coordinateState
+    coordinateProps: state.coordinateState,
+
 });
 
 export default connect(mapStateToProps)(CafeCards)
